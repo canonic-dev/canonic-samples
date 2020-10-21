@@ -1,0 +1,126 @@
+@import "../../const/index.scss";
+
+.login {
+  width: 100vw;
+  height: 94vh;
+  overflow: hidden;
+  @include flexbox(column, stretch, space-between);
+}
+
+.loginBg {
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 300%;
+  height: 300%;
+  object-fit: cover;
+  filter: blur(20px);
+  opacity: 0.3;
+  animation: rotate-in 500s infinite linear;
+  @keyframes rotate-in {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.loginCard {
+  @include flexbox(column, center, center);
+  position: relative;
+  z-index: 2;
+  min-height: 300px;
+  min-width: 300px;
+  max-width: 300px;
+  padding: $padding__large;
+  border: 1px solid rgba(#222, 0.5);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  margin: 10vh auto;
+  background-color: #000;
+  text-align: center;
+  border-radius: 8px;
+  &Title {
+    font-size: $text__h3;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: $padding__large * 3;
+  }
+
+  &Subtitle {
+    color: #555;
+    font-weight: 600;
+    font-size: $text__h6;
+    strong {
+      font-weight: 700;
+      color: #999;
+    }
+  }
+
+  &SmallSubtitle {
+    position: relative;
+    font-weight: 600;
+    color: #333;
+    font-size: $text__h7;
+    margin-bottom: $padding__large;
+    &:before {
+      position: absolute;
+      content: "";
+      width: 80%;
+      top: 50%;
+      left: -100%;
+      height: 1px;
+      background-color: #333;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      width: 80%;
+      top: 50%;
+      right: -100%;
+      height: 1px;
+      background-color: #333;
+    }
+  }
+
+  &Button {
+    // width: 00px;
+    margin: 0 auto;
+    white-space: nowrap;
+    padding: 4px;
+    border: 1px solid #333;
+    width: 180px;
+    border-radius: 8px;
+    text-align: center;
+    transition: 0.15s ease-out;
+    &:hover {
+      box-shadow: 0 4px 8px rgba(#000, 0.5);
+      background-color: #111;
+      a {
+        color: #ccc;
+      }
+    }
+
+    a {
+      @include flexbox();
+      color: #999;
+      font-size: $text__h5;
+      font-weight: 600;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    img {
+      display: block;
+      height: 24px;
+      width: 24px;
+      margin-right: 8px;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import "../../const/index.scss";
+
+.notFound {
+  height: 100vh;
+  position: relative;
+  background: #050718;
+  padding: 0 $padding__xl;
+  overflow: hidden;
+
+  &Wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    h1,
+    p {
+      color: #333;
+    }
+
+    img {
+      max-width: 290px;
+      max-height: 272px;
+    }
+
+    button {
+      border-color: #333;
+      background-color: #333;
+      color: #fff;
+      margin-top: 24px;
+    }
+  }
+}

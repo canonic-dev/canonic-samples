@@ -1,0 +1,117 @@
+@import "@src/const/index.scss";
+
+.headerWrapper {
+  position: fixed;
+  z-index: 3;
+  top: 0px;
+}
+
+.header {
+  @include flexbox(row, stretch);
+  height: 42px;
+  width: 100vw;
+  background-color: #000;
+  transition: 0.2s ease-out;
+
+  &Column {
+    @include flexbox(row, stretch);
+    &.alignRight {
+      margin-left: auto;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &Logo {
+    @include flexbox;
+    padding: 0 $padding__large;
+    font-size: 14px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999;
+    height: 100%;
+    cursor: pointer;
+    transition: 0.1s linear;
+    border-right: 1px solid #333;
+    &:hover {
+      background-color: rgba(#fff, 0.1);
+    }
+  }
+
+  .logout {
+    @include flexbox(row, center, center);
+    font-size: 12px;
+    padding: 4px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-right: $padding__small;
+    cursor: pointer;
+    transition: 0.1s linear;
+
+    &:hover {
+      color: #eee;
+    }
+  }
+}
+
+.cookieStrip {
+  position: fixed;
+  bottom: 14px;
+  right: 50%;
+  width: 300px;
+  height: 60px;
+  margin: $padding__large;
+  margin-right: -150px;
+  background-color: #fff;
+  border-radius: 4px;
+  // padding: 4px $padding__small;
+  box-sizing: border-box;
+  @include flexbox(row, center, space-between);
+  transition: 0.1s ease-out;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transform-origin: 50% 100%;
+
+  @include media(mobile) {
+    button {
+      font-size: 14px !important;
+    }
+
+    p {
+      font-size: 14px !important;
+    }
+
+    a {
+      font-size: 12px !important;
+    }
+  }
+
+  &.isConsentGiven {
+    transform: scale3d(0.95, 0.95, 0);
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  a {
+    color: #222;
+    font-size: $text__h7;
+    padding-left: 2px;
+    margin: 0;
+  }
+
+  p {
+    line-height: 1.3;
+    max-width: 400px;
+    font-size: 13px;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0;
+    padding-left: $padding__small;
+  }
+}

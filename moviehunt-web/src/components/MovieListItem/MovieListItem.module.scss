@@ -1,0 +1,204 @@
+@import "@src/const/index.scss";
+.listItem {
+  @include flexbox(row, stretch);
+  position: relative;
+  background-color: #000;
+  border-radius: 8px;
+  margin-bottom: $padding__large * 1.5;
+
+  &Image {
+    position: relative;
+    width: 140px;
+    min-width: 140px;
+    img {
+      width: 100%;
+      height: auto;
+      min-height: 100%;
+      object-fit: cover;
+    }
+
+    &:hover {
+      .listItemTextCta {
+        transform: rotate(180deg) translateX(-1px);
+        opacity: 1;
+      }
+    }
+  }
+
+  &Upvote {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    color: #666;
+    z-index: 2;
+    font-size: $text__h5 - 2;
+    font-weight: 700;
+    letter-spacing: -1px;
+    transform: translate3d(calc(-100% - #{$padding__large * 1.5}), -50%, 0);
+    padding: $padding__small $padding__medium;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.15s ease-out;
+    strong {
+      display: block;
+      color: #999;
+      margin-bottom: 4px;
+      transition: 0.15s ease-out;
+    }
+
+    &:hover {
+      background-color: #151515;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      strong {
+        color: #fff;
+      }
+    }
+
+    &.upvoted {
+      cursor: default;
+      background-color: #333;
+      color: #fff;
+      strong {
+        color: #fff;
+      }
+    }
+  }
+
+  &ImageCover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    opacity: 0.18;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &Text {
+    position: relative;
+    padding: $padding__medium $padding__large;
+    flex: 1;
+    color: #f5f5f5;
+    cursor: pointer;
+
+    &:hover {
+      .listItemTextCta {
+        transform: rotate(180deg) translateX(-1px);
+        opacity: 1;
+      }
+    }
+
+    &Title {
+      font-weight: 600;
+      font-size: $text__h4;
+      margin-bottom: 6px;
+    }
+
+    &Stats {
+      @include flexbox;
+      margin-bottom: $padding__small;
+
+      &Genres {
+        @include flexbox;
+        margin-right: 4px;
+        &Item {
+          font-size: $text__h7;
+          padding: 2px 4px;
+          border: 1px solid #333;
+          border-radius: 4px;
+          color: #aaa;
+          &:not(:last-child) {
+            margin-right: 4px;
+          }
+
+          &:hover {
+            color: #fff;
+            background-color: #222;
+          }
+        }
+      }
+
+      &Rating {
+        font-size: $text__h7;
+        padding: 2px 4px;
+        border: 1px solid #333;
+        border-radius: 4px;
+        color: #aaa;
+        background-color: #333;
+        font-weight: 600;
+        margin-right: 4px;
+        cursor: default;
+      }
+    }
+
+    &Summary {
+      color: #999;
+      font-size: $text__h6;
+      line-height: 1.5;
+      margin-bottom: $padding__medium;
+      max-height: $text__h6 * 1.8 * 3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      p {
+        font-size: $text__h6;
+      }
+    }
+
+    &Footer {
+      @include flexbox(row, center, space-between);
+    }
+
+    &Cast {
+      @include flexbox;
+
+      &:hover {
+        .listItemTextCastItem {
+          transform: scale(1, 1);
+        }
+      }
+
+      &Item {
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        box-shadow: -8px 0 12px rgba(0, 0, 0, 0.5);
+        margin-right: 4px;
+        transition: 0.15s cubic-bezier(0.19, 1, 0.22, 1);
+        cursor: pointer;
+        overflow: hidden;
+
+        @for $i from 1 to 10 {
+          &:nth-child(#{$i}) {
+            transform: translateX(#{($i - 1) * -40%});
+          }
+        }
+
+        @for $i from 1 to 10 {
+          &:nth-child(#{$i}):hover {
+            transform: scale(1.15, 1.15);
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &Cta {
+      font-size: $text__h4;
+      transform: rotate(180deg);
+      transition: 0.15s cubic-bezier(0.19, 1, 0.22, 1);
+      opacity: 0.5;
+      cursor: pointer;
+      padding: $padding__small;
+    }
+  }
+}

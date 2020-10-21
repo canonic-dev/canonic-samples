@@ -1,0 +1,13 @@
+@import "@src/const/index.scss";
+
+.list {
+  margin: 0 auto;
+  max-width: 600px;
+  margin-bottom: $padding__large * 4;
+  &Title {
+    font-size: $text__h3;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: $padding__medium;
+  }
+}

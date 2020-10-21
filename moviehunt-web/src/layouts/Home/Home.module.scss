@@ -1,0 +1,24 @@
+@import "../../const/index.scss";
+.home {
+  padding-top: $padding__large * 4;
+}
+
+.button {
+  display: block;
+  border: none;
+  outline: none;
+  margin: $padding__large * 2 auto;
+  margin-top: -1 * $padding__large;
+  padding: $padding__small $padding__large;
+  background-color: #111;
+  border: 1px solid #999;
+  border-radius: 4px;
+  color: #999;
+  cursor: pointer;
+  transition: 0.1s ease-out;
+  &:hover {
+    background-color: rgba(#222, 0.5);
+    color: #eee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+}

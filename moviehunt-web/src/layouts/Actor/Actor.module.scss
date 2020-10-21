@@ -1,0 +1,82 @@
+@import "../../const/index.scss";
+.actor {
+  min-height: 79vh;
+
+  > header {
+    @include flexbox(row, center, center);
+    background-color: #090909;
+    padding: $padding__large * 2 0;
+    padding-top: $padding__large * 1.5;
+    margin-bottom: $padding__large * 2;
+  }
+
+  &Header {
+    @include flexbox;
+    color: #999;
+    max-width: 600px + 250px;
+    min-width: 600px + 250px;
+    // margin: 0 auto;
+    margin-left: -250px;
+    min-height: 120px;
+
+    &Avatar {
+      min-width: 200px;
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      border: 1px solid #000;
+      background-color: #000;
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5);
+      margin-right: $padding__large * 2;
+      // margin-bottom: -$padding__large * 4.5;
+      margin-bottom: -25%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &Text {
+      &Title {
+        font-size: $text__h2;
+        font-weight: 600;
+        color: #ccc;
+        margin-bottom: 8px;
+      }
+
+      &Birthday {
+        margin-bottom: $padding__small;
+      }
+
+      &Bio {
+        font-size: $text__h6;
+        line-height: 1.8;
+        max-width: 768px;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+.button {
+  display: block;
+  border: none;
+  outline: none;
+  margin: $padding__large * 2 auto;
+  margin-top: -1 * $padding__large;
+  padding: $padding__small $padding__large;
+  background-color: #111;
+  border: 1px solid #999;
+  border-radius: 4px;
+  color: #999;
+  cursor: pointer;
+  transition: 0.1s ease-out;
+  &:hover {
+    background-color: rgba(#222, 0.5);
+    color: #eee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+}

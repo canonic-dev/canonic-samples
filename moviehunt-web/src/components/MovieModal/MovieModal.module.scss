@@ -1,0 +1,141 @@
+@import "@src/const/index.scss";
+
+.movie {
+  max-width: 600px;
+  height: 100%;
+  overflow-y: auto;
+  display: block;
+  &Header {
+    padding: $padding__large;
+    @include flexbox(row, flex-start);
+    color: #333;
+    margin-bottom: $padding__large * 0.5;
+
+    &Image {
+      position: relative;
+      width: 140px;
+      min-width: 140px;
+      margin-right: $padding__medium;
+      img {
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+        object-fit: cover;
+        // max-height: 200px;
+      }
+    }
+
+    &Text {
+      position: relative;
+      padding: 0;
+      flex: 1;
+      color: #333;
+      &Title {
+        font-weight: 600;
+        font-size: $text__h4;
+        margin-bottom: 4px;
+      }
+
+      &Stats {
+        margin-bottom: $padding__large;
+      }
+
+      &Summary {
+        color: #999;
+        font-size: $text__h6;
+        line-height: 1.5;
+        max-height: $text__h6 * 1.8 * 6;
+        overflow: hidden;
+        p {
+          font-size: $text__h6;
+        }
+      }
+    }
+  }
+
+  &Trailer {
+    width: 100%;
+    margin-bottom: $padding__large * 1.5;
+    &Header {
+      padding: 0 $padding__large;
+      font-size: $text__h4;
+      font-weight: 600;
+      font-size: $text__h4;
+      margin-bottom: $padding__medium;
+      color: #aaa;
+    }
+    &Embed {
+      height: 300px;
+      background: #000;
+      iframe {
+        margin: 0;
+        border: none;
+      }
+    }
+  }
+
+  &Cast {
+    width: 100%;
+    margin-bottom: $padding__large * 4;
+    &Header {
+      padding: 0 $padding__large;
+      font-size: $text__h4;
+      font-weight: 600;
+      font-size: $text__h4;
+      margin-bottom: $padding__large;
+      color: #aaa;
+    }
+    &Items {
+      @include flexbox;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.cast {
+  flex: 1;
+  flex-basis: calc(50% - #{$padding__large * 2});
+  padding: 0 $padding__large;
+  @include flexbox(row, flex-start);
+  color: #333;
+  margin-bottom: $padding__medium;
+
+  &Image {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    margin-right: $padding__medium;
+    border-radius: 100px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      // max-height: 200px;
+    }
+  }
+
+  &Text {
+    position: relative;
+    padding: 0;
+    flex: 1;
+    color: #333;
+    &Title {
+      font-weight: 600;
+      font-size: $text__h5;
+      margin-bottom: 4px;
+    }
+
+    &Summary {
+      color: #999;
+      font-size: $text__h5;
+      line-height: 1.5;
+      margin-bottom: $padding__large;
+      p {
+        font-size: $text__h6;
+      }
+    }
+  }
+}

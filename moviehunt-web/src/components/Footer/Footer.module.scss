@@ -1,0 +1,43 @@
+@import "@src/const/index.scss";
+
+.footer {
+  box-sizing: border-box;
+  padding: 0 $padding__xl;
+  background-color: #090909;
+  color: #EEE;
+  margin-top: auto;
+  @include media(tablet) {
+    padding: 0 $padding__xl;
+  }
+
+  @include media(mobile) {
+    padding: 0 $padding__large;
+  }
+
+  &Row {
+    @include flexbox(row, center, space-between);
+    flex-wrap: wrap;
+    padding-top: 0;
+    padding: $padding__medium 0;
+    font-size: $text__h7;
+    &Logo {
+      font-weight: 700;
+      font-size: $text__h6;
+      text-transform: uppercase;
+      color: #999;
+      margin-right: $padding__large;
+
+      a {
+        // font-size: $text__h4;
+        color: #eee;
+        text-decoration: underline;
+        text-decoration-color: #666;
+        &:hover {
+          color: #fff;
+          text-decoration-color: #fff;
+        }
+        // padding-left: 8px;
+      }
+    }
+  }
+}

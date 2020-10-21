@@ -1,0 +1,34 @@
+@import "~@src/const/index.scss";
+
+:local {
+  .loader {
+    svg:not(.progress) {
+      transform: scale(1.45, 1.45);
+    }
+  }
+
+  .progress {
+    display: block;
+    transform: translate(-0.29px, -0.19px) rotate(-90deg);
+    overflow: visible;
+    width: 78%;
+    height: 78%;
+    margin-top: 11%;
+    margin-left: calc(11% - 0.1px);
+
+    &Meter,
+    &Value {
+      fill: none;
+    }
+
+    &Meter {
+      stroke: #222;
+    }
+
+    &Value {
+      stroke: #fff;
+      stroke-linecap: round;
+      transition: 0.15s ease-out;
+    }
+  }
+}
