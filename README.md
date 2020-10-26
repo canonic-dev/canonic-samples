@@ -8,7 +8,7 @@ This repository contains code samples for different types of applications using 
 
 ## Projects
 
-### 🍿 [Movie Hunt](./moviehunt-web/README.md)
+### 🍿 [Movie Hunt](./moviehunt-web/)
 
 Similar to Product Hunt but for movies. It's a dynamic web application based on Gatsby
 
