@@ -7,7 +7,7 @@ Similar to Product Hunt but for movies. It's a dynamic web application based on 
 A Sample application powered by [Canonic](https://canonic.dev)
 <br/>
 
-#### [https://mh.canonic.dev](https://mh.canonic.dev)
+#### [https://moviehunt.canonic.dev/](https://moviehunt.canonic.dev/)
 
 ### Developing
 Starts the development server on port `8000`.
