@@ -2,9 +2,9 @@
 
 This repository contains code samples for different types of applications using different languages and frameworks.
 
-**The applications are powered by APIs built using [Canonic's](https://canonic.dev) platform.**
-
 <br/>
+
+**The applications are powered by APIs built using [Canonic's](https://canonic.dev) platform.**
 
 ## Projects
 
