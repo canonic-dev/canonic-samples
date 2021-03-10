@@ -22,7 +22,6 @@ Similar to Product Hunt but for movies. It's a dynamic web application based on 
 
 Sample iOS Application built with Swift for getting a party started.
 
-![Screenshot](./Canolo-iOS/screenshots/IMG_0262.PNG)
 ![Screenshot](./Canolo-iOS/screenshots/IMG_0264.PNG)
 
 > ### More coming soon 🚀
