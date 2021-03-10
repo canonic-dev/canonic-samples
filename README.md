@@ -18,7 +18,7 @@ Similar to Product Hunt but for movies. It's a dynamic web application based on 
 
 <br/>
 
-### 🍻 [Canolo](./Canonic-iOS)
+### 🍻 [Canolo](./Canolo-iOS/)
 
 Sample iOS Application built with Swift for getting a party started.
 
