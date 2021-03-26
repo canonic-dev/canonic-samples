@@ -24,4 +24,14 @@ Sample iOS Application built with Swift for getting a party started.
 
 ![Screenshot](./Canolo-iOS/screenshots/IMG_0264.PNG)
 
+---
+
+<br/>
+
+### 🔐 [Google Signin with React using Graphql](./google-signin-with-react/)
+
+Sample web app built using React, demonstrating how google signin works with Canonic via graphql APIs
+
+![Screenshot](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
 > ### More coming soon 🚀
