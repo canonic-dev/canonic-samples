@@ -32,6 +32,6 @@ Sample iOS Application built with Swift for getting a party started.
 
 Sample web app built using React, demonstrating how google signin works with Canonic via graphql APIs
 
-![Screenshot](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+![Screenshot](./google-signin-with-react/screenshots/screenshot.gif)
 
 > ### More coming soon 🚀
