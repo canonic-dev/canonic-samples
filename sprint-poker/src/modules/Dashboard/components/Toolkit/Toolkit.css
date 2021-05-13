@@ -1,0 +1,50 @@
+.toolkit {
+  background: var(--main-text-color);
+  padding: 8px;
+}
+
+.toolkit-wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--main-text-color);
+}
+
+.toolkit-wrapper .label {
+  color: var(--main-second-text-color);
+}
+
+.toolkit-wrapper input {
+  color: #fff;
+  border-bottom: 1px solid var(--alternate-background-color) !important;
+}
+
+.toolkit-wrapper .inputWithButton .button {
+  top: 40%;
+  color: var(--alternate-background-color);
+}
+
+.toolkit-session {
+  display: flex;
+}
+
+.toolkit-session > .button {
+  line-height: 28px;
+  margin: 0;
+  border-color: var(--alternate-background-color);
+  color: var(--alternate-background-color);
+}
+
+.toolkit-session-id {
+  font-size: 16px;
+  line-height: 44px;
+  margin-right: 16px;
+  font-weight: 600;
+  color: var(--main-second-text-color);
+}
+
+.toolkit-session-id span {
+  font-weight: 700;
+  color: var(--alternate-background-color);
+}

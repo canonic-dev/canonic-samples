@@ -1,0 +1,5 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  color: var(--main-text-color);
+}

@@ -1,0 +1,62 @@
+.point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.point-heading {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 9px 0;
+}
+
+.point-wrapper {
+  display: flex;
+}
+
+.point-wrapper > div:not(:last-child) {
+  margin-right: 6px;
+}
+
+.point-selection {
+  padding: 4px 10px;
+  border: 1px solid var(--main-text-color);
+  cursor: pointer;
+  background-color: var(--alternate-background-color);
+  color: var(--main-text-color);
+  transition: all 0.1s ease-in-out;
+}
+
+.point-selection:hover {
+  text-decoration: underline;
+}
+
+.point .selected {
+  background: var(--main-text-color);
+  color: var(--alternate-background-color);
+  border: 1px solid var(--alternate-text-color);
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.point-reveal {
+  margin-left: 18px;
+  padding: 4px 10px;
+  border: 2px solid var(--success-color);
+  font-weight: 600;
+  color: var(--success-color);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.point-container {
+  display: flex;
+}
+
+.point .revealed {
+  background: var(--success-color);
+  color: var(--main-text-color);
+  cursor: no-drop;
+}

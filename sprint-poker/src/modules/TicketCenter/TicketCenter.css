@@ -1,0 +1,42 @@
+.ticketCenter {
+  display: flex;
+  flex-direction: column;
+}
+
+.ticketCenter-cta {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ticketCenter-cta-latest {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 16px;
+  font-size: 14px;
+  color: var(--main-text-color);
+  line-height: 1.4;
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ticketCenter-cta .button {
+  margin: 0;
+}
+
+.ticketCenter-tickets {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.ticketCenter-tickets .inputWithButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.ticketCenter-tickets .inputWithButton .button {
+  top: 71%;
+}

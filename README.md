@@ -24,4 +24,24 @@ Sample iOS Application built with Swift for getting a party started.
 
 ![Screenshot](./Canolo-iOS/screenshots/IMG_0264.PNG)
 
+---
+
+<br/>
+
+### 🔐 [Google Signin with React using Graphql](./google-signin-with-react/)
+
+Sample web app built using React, demonstrating how google signin works with Canonic via graphql APIs
+
+![Screenshot](./google-signin-with-react/screenshots/screenshot.gif)
+
+---
+
+<br/>
+
+### 🃏 [React Webapp for pointing poker](./sprint-poker/)
+
+ReactJS webpack integrated with Canonic using APIs for pointing poker to help you decide story points to JIRA tickets
+
+![Screenshot](./sprint-poker/screenshot.png)
+
 > ### More coming soon 🚀

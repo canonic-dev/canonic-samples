@@ -1,0 +1,86 @@
+.emptySessionState {
+  display: flex;
+  width: 100%;
+}
+
+.emptySessionState-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  background: var(--main-text-color);
+  color: var(--alternate-background-color);
+  flex: 2;
+  max-width: 800px;
+}
+
+.emptySessionState-info-heading {
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.emptySessionState-info-heading span {
+  color: var(--success-color);
+  font-weight: 700;
+}
+
+.emptySessionState-info-list {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.emptySessionState-info-text {
+  max-width: 550px;
+  margin: 24px 0 12px 0;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.emptySessionState-info-more {
+  font-size: 18px;
+}
+
+.emptySessionState-info-more a {
+  color: blue;
+}
+
+.emptySessionState-info-powered {
+  margin-top: 42px;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.emptySessionState-info-powered a {
+  color: var(--main-second-text-color);
+  text-decoration: none;
+}
+
+.emptySessionState-info-powered span {
+  color: var(--canonic-color);
+}
+
+.emptySessionState-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+}
+
+.emptySessionState-cta .inputWithButton {
+  margin: 0 auto;
+}
+
+.emptySessionState .input {
+  text-align: center !important;
+}
+
+.emptySessionState-intro {
+  font-size: 16px;
+  margin-bottom: 42px;
+}
+
+.emptySessionState-seperation {
+  margin: 24px 0;
+}
