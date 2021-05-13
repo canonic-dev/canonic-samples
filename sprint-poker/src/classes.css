@@ -1,0 +1,35 @@
+.button {
+  color: var(--main-text-color);
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-transform: lowercase;
+  width: max-content;
+  border: 2px solid var(--main-text-color);
+  padding: 6px 10px;
+  margin: 0 auto;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.input {
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 4px;
+  font-size: 14px;
+  font-family: "Avenir Next", Avenir Next, sans-serif !important;
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 1px solid var(--main-second-text-color);
+}
+
+.input:active {
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+.input:focus {
+  border-bottom: 1px solid var(--main-text-color);
+}

@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive&display=swap");
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("./fonts/AvenirNext/42c793cf-df5a-4e07-bf3e-37de54df02b6.eot?#iefix");
+  src: url("./fonts/AvenirNext/42c793cf-df5a-4e07-bf3e-37de54df02b6.eot?#iefix")
+      format("eot"),
+    url("./fonts/AvenirNext/64779e28-a3b8-4364-949c-771372a0a327.woff2")
+      format("woff2"),
+    url("./fonts/AvenirNext/c6c8e4be-17eb-4475-bbfc-bb485ffde766.woff")
+      format("woff"),
+    url("./fonts/AvenirNext/87a872d0-5af3-4231-a77c-37f41ec74662.ttf")
+      format("truetype");
+
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("./fonts/AvenirNext/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix");
+  src: url("./fonts/AvenirNext/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix")
+      format("eot"),
+    url("./fonts/AvenirNext/2cd55546-ec00-4af9-aeca-4a3cd186da53.woff2")
+      format("woff2"),
+    url("./fonts/AvenirNext/1e9892c0-6927-4412-9874-1b82801ba47a.woff")
+      format("woff"),
+    url("./fonts/AvenirNext/46cf1067-688d-4aab-b0f7-bd942af6efd8.ttf")
+      format("truetype");
+
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("./fonts/AvenirNext/d1fddef1-d940-4904-8f6c-17e809462301.eot?#iefix");
+  src: url("./fonts/AvenirNext/d1fddef1-d940-4904-8f6c-17e809462301.eot?#iefix")
+      format("eot"),
+    url("./fonts/AvenirNext/7377dbe6-f11a-4a05-b33c-bc8ce1f60f84.woff2")
+      format("woff2"),
+    url("./fonts/AvenirNext/92b66dbd-4201-4ac2-a605-4d4ffc8705cc.woff")
+      format("woff"),
+    url("./fonts/AvenirNext/18839597-afa8-4f0b-9abb-4a30262d0da8.ttf")
+      format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("./fonts/AvenirNext/12d643f2-3899-49d5-a85b-ff430f5fad15.eot?#iefix");
+  src: url("./fonts/AvenirNext/12d643f2-3899-49d5-a85b-ff430f5fad15.eot?#iefix")
+      format("eot"),
+    url("./fonts/AvenirNext/aad99a1f-7917-4dd6-bbb5-b07cedbff64f.woff2")
+      format("woff2"),
+    url("./fonts/AvenirNext/91b50bbb-9aa1-4d54-9159-ec6f19d14a7c.woff")
+      format("woff"),
+    url("./fonts/AvenirNext/a0f4c2f9-8a42-4786-ad00-fce42b57b148.ttf")
+      format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("./fonts/AvenirNext/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix");
+  src: url("./fonts/AvenirNext/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix")
+      format("eot"),
+    url("./fonts/AvenirNext/14c73713-e4df-4dba-933b-057feeac8dd1.woff2")
+      format("woff2"),
+    url("./fonts/AvenirNext/b8e906a1-f5e8-4bf1-8e80-82c646ca4d5f.woff")
+      format("woff"),
+    url("./fonts/AvenirNext/890bd988-5306-43ff-bd4b-922bc5ebdeb4.ttf")
+      format("truetype");
+  font-weight: 700;
+}
+
+:root {
+  --main-text-color: #121212;
+  --main-second-text-color: #b5acac;
+  --alternate-background-color: #fff;
+  --success-color: #45a020;
+  --canonic-color: #4e61da;
+}
+
+body {
+  margin: 0;
+  color: var(--main-text-color);
+  font-family: "Avenir Next", Avenir Next, sans-serif;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  position: relative;
+  height: 100%;
+}
+
+#insideRoot {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+}
