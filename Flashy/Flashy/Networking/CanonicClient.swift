@@ -51,11 +51,32 @@ class CanonicClient: APIHelper {
         }
     }
     
+    func getFlashListsForCategory(categoryId: String,
+                                  success: @escaping (_ flashlists: [FlashList]) -> Void,
+                                  faliure: @escaping (_ error: String?) -> Void) {
+        
+        let requestURL: URL = urlForRequest(pathExtension: "\(DataPoints.flashListsInCategory)\(categoryId)")
+        makeRequest(forURL: requestURL, requestMethod: .GET) { (data, response) in
+            
+            do {
+                let flashLists = try JSONDecoder().decode(FlashLists.self, from: data ?? Data())
+                success(flashLists.flashLists)
+            } catch {
+                print(error)
+                faliure(error.localizedDescription)
+                return
+            }
+        } faliure: { (errorString) in
+            faliure(errorString)
+        }
+    }
+    
+    
     func getCardsForList(listID: String,
                          success: @escaping (_ categories: [Card]) -> Void,
                          faliure: @escaping (_ error: String?) -> Void) {
         
-        let requestURL: URL = urlForRequest(pathExtension: "\(DataPoints.cardsForList)\(listID)")
+        let requestURL: URL = urlForRequest(pathExtension: "\(DataPoints.cardsInList)\(listID)")
         makeRequest(forURL: requestURL, requestMethod: .GET) { (data, response) in
             
             do {
@@ -76,13 +97,14 @@ extension CanonicClient {
     
     struct APIComponents {
         static let scheme = "https"
-        static let host = "flashy.staging.canonic.dev"
+        static let host = "flash-cards-96d5b8.staging.canonic.dev"
         static let path = "/api"
         
     }
     
     struct DataPoints {
         static let categories = "/categories/"
-        static let cardsForList = "/cards/forList/"
+        static let flashListsInCategory = "/flashLists/category/"
+        static let cardsInList = "/cards/list/"
     }
 }

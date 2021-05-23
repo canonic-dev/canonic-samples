@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,14 @@
 		7004B072264802FF00E7493B /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004B071264802FF00E7493B /* CategoriesViewController.swift */; };
 		7004B076264803B600E7493B /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004B075264803B600E7493B /* UIViewController+Extensions.swift */; };
 		7004B07A264803C600E7493B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004B079264803C600E7493B /* UIColor+Extensions.swift */; };
+		7022C4512656A768008D573D /* CardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7022C4502656A768008D573D /* CardsCollectionViewCell.swift */; };
+		7022C456265AE7B9008D573D /* PagingCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7022C455265AE7B9008D573D /* PagingCollectionViewFlowLayout.swift */; };
+		708647082652EC4E009EC137 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708647072652EC4E009EC137 /* CardsViewController.swift */; };
+		708F0595264EA7D0005CBF37 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F0594264EA7D0005CBF37 /* CategoryTableViewCell.swift */; };
+		708F05982650FF04005CBF37 /* FlashListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F05972650FF04005CBF37 /* FlashListTableViewCell.swift */; };
+		708F059A2650FF10005CBF37 /* FlashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F05992650FF10005CBF37 /* FlashListViewController.swift */; };
+		708F059D2651432C005CBF37 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 708F059C2651432C005CBF37 /* Alamofire */; };
+		708F05A02651435C005CBF37 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 708F059F2651435C005CBF37 /* AlamofireImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +48,12 @@
 		7004B071264802FF00E7493B /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		7004B075264803B600E7493B /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		7004B079264803C600E7493B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		7022C4502656A768008D573D /* CardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewCell.swift; sourceTree = "<group>"; };
+		7022C455265AE7B9008D573D /* PagingCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		708647072652EC4E009EC137 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		708F0594264EA7D0005CBF37 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		708F05972650FF04005CBF37 /* FlashListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashListTableViewCell.swift; sourceTree = "<group>"; };
+		708F05992650FF10005CBF37 /* FlashListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				708F059D2651432C005CBF37 /* Alamofire in Frameworks */,
+				708F05A02651435C005CBF37 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +114,8 @@
 		7004B0442646A5B000E7493B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				708647092652EC52009EC137 /* Cards */,
+				708F05962650FEEC005CBF37 /* FlashLists */,
 				7004B0462646A5C200E7493B /* Categories */,
 			);
 			path = Modules;
@@ -107,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				7004B071264802FF00E7493B /* CategoriesViewController.swift */,
+				708F0594264EA7D0005CBF37 /* CategoryTableViewCell.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -147,6 +166,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		708647092652EC52009EC137 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				708647072652EC4E009EC137 /* CardsViewController.swift */,
+				7022C4502656A768008D573D /* CardsCollectionViewCell.swift */,
+				7022C455265AE7B9008D573D /* PagingCollectionViewFlowLayout.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		708F05962650FEEC005CBF37 /* FlashLists */ = {
+			isa = PBXGroup;
+			children = (
+				708F05972650FF04005CBF37 /* FlashListTableViewCell.swift */,
+				708F05992650FF10005CBF37 /* FlashListViewController.swift */,
+			);
+			path = FlashLists;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,6 +202,8 @@
 			);
 			name = Flashy;
 			packageProductDependencies = (
+				708F059C2651432C005CBF37 /* Alamofire */,
+				708F059F2651435C005CBF37 /* AlamofireImage */,
 			);
 			productName = Flashy;
 			productReference = 7004B029264690DB00E7493B /* Flashy.app */;
@@ -193,6 +233,8 @@
 			);
 			mainGroup = 7004B020264690DB00E7493B;
 			packageReferences = (
+				708F059B2651432C005CBF37 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				708F059E2651435C005CBF37 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 7004B02A264690DB00E7493B /* Products */;
 			projectDirPath = "";
@@ -223,15 +265,21 @@
 			files = (
 				7004B0642647E06300E7493B /* CanonicClient.swift in Sources */,
 				7004B0602647E05800E7493B /* APIHelper.swift in Sources */,
+				708647082652EC4E009EC137 /* CardsViewController.swift in Sources */,
 				7004B076264803B600E7493B /* UIViewController+Extensions.swift in Sources */,
 				7004B072264802FF00E7493B /* CategoriesViewController.swift in Sources */,
 				7004B02D264690DB00E7493B /* AppDelegate.swift in Sources */,
 				7004B057264794C500E7493B /* Categories.swift in Sources */,
 				7004B02F264690DB00E7493B /* SceneDelegate.swift in Sources */,
+				708F059A2650FF10005CBF37 /* FlashListViewController.swift in Sources */,
+				708F05982650FF04005CBF37 /* FlashListTableViewCell.swift in Sources */,
+				7022C456265AE7B9008D573D /* PagingCollectionViewFlowLayout.swift in Sources */,
 				7004B05D2647974400E7493B /* Cards.swift in Sources */,
 				7004B07A264803C600E7493B /* UIColor+Extensions.swift in Sources */,
+				7022C4512656A768008D573D /* CardsCollectionViewCell.swift in Sources */,
 				7004B05A2647954200E7493B /* FlashLists.swift in Sources */,
 				7004B0682647E64D00E7493B /* Constants.swift in Sources */,
+				708F0595264EA7D0005CBF37 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +481,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		708F059B2651432C005CBF37 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		708F059E2651435C005CBF37 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		708F059C2651432C005CBF37 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 708F059B2651432C005CBF37 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		708F059F2651435C005CBF37 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 708F059E2651435C005CBF37 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7004B021264690DB00E7493B /* Project object */;
 }

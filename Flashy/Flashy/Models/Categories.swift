@@ -20,20 +20,17 @@ struct Categories: Decodable {
 struct Category: Decodable {
     let id, name, description: String
     let coverImage: CoverImage?
-    let flashLists: [FlashList]
     
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case name, description, coverImage
-        case flashLists = "lists"
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
-        description = try container.decode(String.self, forKey: .description)
-        flashLists = try container.decode([FlashList].self, forKey: .flashLists)
+        description = try container.decode(String.self, forKey: .description)        
         coverImage = try container.decodeIfPresent(CoverImage.self, forKey: .coverImage)
     }
 }

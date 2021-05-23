@@ -17,7 +17,7 @@ struct StoryBoardID {
 struct CellIdentifiers {
     static let CategoryTableCell = "CategoryTableCell"
     static let FlashListTableCell = "FlashListTableCell"
-    static let CardTableCell = "CardTableCell"
+    static let FlashCardCollectionCell = "FlashCardCollectionCell"
 }
 
 enum NetworkState {

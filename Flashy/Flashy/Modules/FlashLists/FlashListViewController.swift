@@ -1,40 +1,38 @@
 //
-//  CategoriesViewController.swift
+//  FlashListViewController.swift
 //  Flashy
 //
-//  Created by SimranJot on 09/05/21.
+//  Created by SimranJot on 16/05/21.
 //
 
 import UIKit
 
-class CategoriesViewController: UIViewController {
-    
-    var categories: [Category] = []
+class FlashListViewController: UIViewController {
+            
+    var category: Category!
+    var flashLists: [FlashList] = []
     var fetchState: NetworkState = .loading
     
-    @IBOutlet weak var retryButton: UIButton!
+    @IBOutlet weak var flashListTableView: UITableView!
     @IBOutlet weak var retryStackView: UIStackView!
+    @IBOutlet weak var retryButton: UIButton!
     @IBOutlet weak var loadingStackView: UIStackView!
-    @IBOutlet weak var categoriesTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Categories"
+
         view.backgroundColor = UIColor(rgb: 0xe1e5ea)
-                
         setupRetryButtton()
         setupTableView()
         
         updateViewState()
-        fetchCategories()
+        fetchFlashLists()
     }
 }
 
-
 // MARK: View Setup
 
-extension CategoriesViewController {
+extension FlashListViewController {
     
     fileprivate func setupRetryButtton() {
         retryButton.layer.cornerRadius = 8
@@ -42,8 +40,8 @@ extension CategoriesViewController {
     }
     
     fileprivate func setupTableView() {
-        categoriesTableView.backgroundColor = .clear
-        categoriesTableView.tableFooterView = UIView()
+        flashListTableView.backgroundColor = .clear
+        flashListTableView.tableFooterView = UIView()
     }
     
     fileprivate func updateViewState() {
@@ -51,17 +49,17 @@ extension CategoriesViewController {
         case .success:
             retryStackView.isHidden = true
             loadingStackView.isHidden = true
-            categoriesTableView.isHidden = false
+            flashListTableView.isHidden = false
             break;
             
         case .loading:
             retryStackView.isHidden = true
             loadingStackView.isHidden = false
-            categoriesTableView.isHidden = true
+            flashListTableView.isHidden = true
             
         case .failure:
             retryStackView.isHidden = false
-            categoriesTableView.isHidden = true
+            flashListTableView.isHidden = true
             loadingStackView.isHidden = true
             break
             
@@ -72,17 +70,17 @@ extension CategoriesViewController {
 
 // MARK: Action Helpers
 
-extension CategoriesViewController {
+extension FlashListViewController {
     
-    @IBAction func retryTapped(_ sender: Any) {
-        fetchCategories()
+    @IBAction func retryButtonTapped(_ sender: Any) {
+        fetchFlashLists()
         updateViewState()
     }
     
-    fileprivate func postCategoriesFetchActions() {
+    fileprivate func postFlashListsFetchActions() {
         switch fetchState {
         case .success:
-            categoriesTableView.reloadSections(IndexSet(integer: 0), with: .bottom)
+            flashListTableView.reloadSections(IndexSet(integer: 0), with: .fade)
             break
         default:
             break
@@ -90,50 +88,50 @@ extension CategoriesViewController {
         updateViewState()
     }
     
-    fileprivate func pushToFlashListsVC(for category: Category) {
-        let flashListsVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: StoryBoardID.FlashListViewController) as! FlashListViewController
-        flashListsVC.category = category
-        self.navigationController?.pushViewController(flashListsVC, animated: true)
+    fileprivate func pushToFlashCardsVC(for flashList: FlashList) {
+        let flashCardsVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: StoryBoardID.CardsViewController) as! CardsViewController
+        flashCardsVC.list = flashList
+        self.navigationController?.pushViewController(flashCardsVC, animated: true)
     }
 }
 
 
 // MARK: TableView Delegates
 
-extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
+extension FlashListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return flashLists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.CategoryTableCell, for: indexPath) as! CategoryTableViewCell
-        cell.configureCell(for: categories[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.FlashListTableCell, for: indexPath) as! FlashListTableViewCell
+        cell.configureCell(for: flashLists[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        pushToFlashListsVC(for: categories[indexPath.row])
+        pushToFlashCardsVC(for: flashLists[indexPath.row])
     }
 }
 
 
 // MARK: Networking
 
-extension CategoriesViewController {
+extension FlashListViewController {
     
-    fileprivate func fetchCategories() {
+    fileprivate func fetchFlashLists() {
         fetchState = .loading
-        CanonicClient.sharedInstance().getAllCategories { [weak self] (availableCategories) in
-            self?.categories = availableCategories
+        CanonicClient.sharedInstance().getFlashListsForCategory(categoryId: category.id) { [weak self] lists in
+            self?.flashLists = lists
             self?.fetchState = .success
             DispatchQueue.main.async {
-                self?.postCategoriesFetchActions()
+                self?.postFlashListsFetchActions()
             }
-        } faliure: { [weak self] (errorString) in
+        } faliure: { [weak self] errorString in
             self?.fetchState = .failure
             DispatchQueue.main.async {
-                self?.postCategoriesFetchActions()
+                self?.postFlashListsFetchActions()
             }
         }
     }

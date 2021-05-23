@@ -13,20 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-//        CanonicClient.sharedInstance().getAllCategories { (cagetories) in
-//            print(cagetories)
-//        } faliure: { (error) in
-//            print(error ?? "")
-//        }
-//
-//        CanonicClient.sharedInstance().getCardsForList(listID: "60965010d7a25b0009c792b0") { (cards) in
-//            print(cards)
-//        } faliure: { (error) in
-//            print(error ?? "")
-//        }
-
-        
         return true
     }
 

@@ -20,12 +20,11 @@ struct FlashLists: Decodable {
 struct FlashList: Decodable {
     let id, name, description: String
     let coverImage: CoverImage?
-    let categoryId: String
+    let category: Category
     
     enum CodingKeys: String, CodingKey {
         case id = "_id"
-        case name, description, coverImage
-        case categoryId = "category"
+        case name, description, coverImage, category
     }
     
     init(from decoder: Decoder) throws {
@@ -33,7 +32,7 @@ struct FlashList: Decodable {
         id = try container.decode(String.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         description = try container.decode(String.self, forKey: .description)
-        categoryId = try container.decode(String.self, forKey: .categoryId)
+        category = try container.decode(Category.self, forKey: .category)
         coverImage = try container.decodeIfPresent(CoverImage.self, forKey: .coverImage)
     }
 }

@@ -23,6 +23,5 @@ struct Card: Decodable {
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case title, description
-        
     }
 }
