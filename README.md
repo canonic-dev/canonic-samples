@@ -53,6 +53,20 @@ Sample kanban board web app created using React,apollo and graphql.
 
 ![Screenshot](./kanban-board/screenshot.png)
 
+---
+
+<br/>
+
+### [Roadmap](./roadmap/)
+
+Roadmap app created with React, GraphQL and Canonic as a backend.
+
+![Screenshot](./roadmap/screenshot.png)
+
+---
+
+<br/>
+
 #### More coming soon 🚀
 
 #### Join the thriving 🌎 [Discord](https://discord.gg/9dyytsM) community to get help and share and brainstorm ideas.
