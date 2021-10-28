@@ -53,6 +53,12 @@ Sample kanban board web app created using React,apollo and graphql.
 
 ![Screenshot](./kanban-board/screenshot.png)
 
+### [The Release Notes Appp](./release-notes-app/)
+
+A React js project using Tailwind CSS and Canonic.
+
+![Screenshot](./release-notes-app/screenshot.png)
+
 #### More coming soon 🚀
 
 #### Join the thriving 🌎 [Discord](https://discord.gg/9dyytsM) community to get help and share and brainstorm ideas.
