@@ -1,44 +1,40 @@
 import React, { useState } from "react";
 import "antd/dist/antd.css";
-import { Form, Input, Button, Typography, Spin, notification } from "antd";
+import { Form, Input, Button, Typography, Spin } from "antd";
 import UseContactUs from "../../utils/apis/useContactUs";
+import {
+  NOTIFICATION_DETAILS,
+  FORM_PADDING,
+} from "../../utils/constants/Constants";
+import showNotification from "../../utils/views/showNotification";
 
 const ContactForm = () => {
   const [form] = Form.useForm();
   const { Title, Text } = Typography;
   const [loading, setLoading] = useState(false);
 
-  const notificationDetails = {
-    success: {
-      message: "Details Submitted!",
-      description:
-        "We've got your information. Our team will get in touch you shortly!",
-    },
-    error: {
-      message: "Something went wrong!",
-      description: "Please try again later or email us to support@canonic.dev!",
-    },
-  };
+  console.log("FORM PAdding", FORM_PADDING);
 
-  const onSubmit = async () => {
+  const onSubmit = React.useCallback(async () => {
+    let values;
     try {
-      setLoading(true);
-      const values = await form.validateFields();
-      await UseContactUs(values);
-      setLoading(false);
-      openNotificationWithIcon("success", notificationDetails.success);
-      form.resetFields();
+      values = await form.validateFields();
     } catch (errorInfo) {
-      setLoading(false);
-      openNotificationWithIcon("error", notificationDetails.error);
+      return;
     }
-  };
+    setLoading(true);
+    const result = await UseContactUs(values);
+    setLoading(false);
+    handleSubmission(result);
+  }, [form]);
 
-  const openNotificationWithIcon = (type, details) => {
-    notification[type]({
-      message: details.message,
-      description: details.description,
-    });
+  const handleSubmission = (result) => {
+    if (result.error) {
+      showNotification("error", NOTIFICATION_DETAILS.error);
+    } else {
+      showNotification("success", NOTIFICATION_DETAILS.success);
+      form.resetFields();
+    }
   };
 
   return (
@@ -48,19 +44,12 @@ const ContactForm = () => {
         style={{
           marginBottom: 0,
           paddingTop: 20,
-          paddingLeft: 30,
-          paddingRight: 30,
+          ...FORM_PADDING,
         }}
       >
         ✉️ Contact Us!
       </Title>
-      <Text
-        type="secondary"
-        style={{
-          paddingLeft: 30,
-          paddingRight: 30,
-        }}
-      >
+      <Text type="secondary" style={{ ...FORM_PADDING }}>
         Let us know how we can help you.
       </Text>
       <Spin spinning={loading}>
@@ -74,8 +63,7 @@ const ContactForm = () => {
           style={{
             marginTop: 20,
             paddingBottom: 10,
-            paddingLeft: 30,
-            paddingRight: 30,
+            ...FORM_PADDING,
           }}
         >
           <Form.Item

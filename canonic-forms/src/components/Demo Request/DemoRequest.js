@@ -2,8 +2,13 @@ import { React, useState, useEffect } from "react";
 import CountryPhoneInput, { ConfigProvider } from "antd-country-phone-input";
 import en from "world_countries_lists/data/en/world.json";
 import isMobilePhone from "validator/lib/isMobilePhone";
-import UseGetDemo from "../../hooks/apis/useGetDemo";
-import { Form, Input, Button, Typography, Spin, notification } from "antd";
+import UseGetDemo from "../../utils/apis/useGetDemo";
+import {
+  NOTIFICATION_DETAILS,
+  FORM_PADDING,
+} from "../../utils/constants/Constants";
+import showNotification from "../../utils/views/showNotification";
+import { Form, Input, Button, Typography, Spin } from "antd";
 
 import "antd/dist/antd.css";
 import "antd-country-phone-input/dist/index.css";
@@ -13,18 +18,6 @@ const DemoRequest = () => {
   const [checkPhoneNumber, setCheckPhoneNumber] = useState(true);
   const { Title, Text } = Typography;
   const [loading, setLoading] = useState(false);
-
-  const notificationDetails = {
-    success: {
-      message: "Details Submitted!",
-      description:
-        "We've got your information. Our team will get in touch you shortly!",
-    },
-    error: {
-      message: "Something went wrong!",
-      description: "Please try again later or email us to support@canonic.dev!",
-    },
-  };
 
   const onPhoneNumberChange = (e) => {
     var valid = isMobilePhone("+" + e.code + e.phone);
@@ -46,24 +39,25 @@ const DemoRequest = () => {
     };
   };
 
-  const openNotificationWithIcon = (type, details) => {
-    notification[type]({
-      message: details.message,
-      description: details.description,
-    });
+  const onSubmit = async () => {
+    let values;
+    try {
+      values = await form.validateFields();
+    } catch (errorInfo) {
+      return;
+    }
+    setLoading(true);
+    const results = await UseGetDemo(nomalisePayload(values));
+    setLoading(false);
+    handleSubmission(results);
   };
 
-  const onSubmit = async () => {
-    try {
-      setLoading(true);
-      const values = await form.validateFields();
-      await UseGetDemo(nomalisePayload(values));
-      setLoading(false);
-      openNotificationWithIcon("success", notificationDetails.success);
+  const handleSubmission = (result) => {
+    if (result.error) {
+      showNotification("error", NOTIFICATION_DETAILS.error);
+    } else {
+      showNotification("success", NOTIFICATION_DETAILS.success);
       form.resetFields();
-    } catch (errorInfo) {
-      setLoading(false);
-      openNotificationWithIcon("error", notificationDetails.error);
     }
   };
 
@@ -78,8 +72,7 @@ const DemoRequest = () => {
         style={{
           marginBottom: 0,
           paddingTop: 20,
-          paddingLeft: 30,
-          paddingRight: 30,
+          ...FORM_PADDING,
         }}
       >
         📹 Get a Demo!
@@ -87,8 +80,7 @@ const DemoRequest = () => {
       <Text
         type="secondary"
         style={{
-          paddingLeft: 30,
-          paddingRight: 30,
+          ...FORM_PADDING,
         }}
       >
         A quick 30 mins session of the platform.
@@ -104,8 +96,7 @@ const DemoRequest = () => {
           style={{
             marginTop: 20,
             paddingBottom: 10,
-            paddingLeft: 30,
-            paddingRight: 30,
+            ...FORM_PADDING,
           }}
           initialValues={{
             lowerCase: {
