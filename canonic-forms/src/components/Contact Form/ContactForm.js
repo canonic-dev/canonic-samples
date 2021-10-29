@@ -13,8 +13,6 @@ const ContactForm = () => {
   const { Title, Text } = Typography;
   const [loading, setLoading] = useState(false);
 
-  console.log("FORM PAdding", FORM_PADDING);
-
   const onSubmit = React.useCallback(async () => {
     let values;
     try {
