@@ -27,6 +27,6 @@ It is a self contained form that let's user submit their contact information for
 
 ### Connecting with your backend
 
-Find the `useContactUs.js` and `useGetDemo.js` files under the `hooks` folder. Just replace the URLs to your backend API URLs and you are good to go.
+Find the `useContactUs.js` and `useGetDemo.js` files under the `hooks` folder. Just replace the `url` parameter to point to your backend API URLs and you are good to go.
 
 ![Screenshot](./screenshots/entry.png)

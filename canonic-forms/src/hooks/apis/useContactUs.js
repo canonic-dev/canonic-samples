@@ -1,15 +1,13 @@
 const UseContactUs = async (data) => {
+  const url = "https://canonic-forms.can.canonic.dev/api/contactuses";
+
   const submitRequest = async (reqBody) => {
-    console.log("INPUT: ", reqBody);
     try {
-      const res = await fetch(
-        "https://canonic-forms.can.canonic.dev/api/contactuses",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ input: reqBody }),
-        }
-      );
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ input: reqBody }),
+      });
       const json = await res.json();
       return { response: json, error: undefined };
     } catch (error) {
