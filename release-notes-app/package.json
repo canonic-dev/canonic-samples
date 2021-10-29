@@ -1,5 +1,5 @@
 {
-  "name": "release-notes-app",
+  "name": "@canonic-dev/release-notes-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

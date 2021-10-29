@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { GET_VERSIONS } from "../gql/query";
 
 const Sidebar = () => {
@@ -12,13 +12,24 @@ const Sidebar = () => {
     }
   }, [data]); //Setting the useState hook with all the version once component is rendered.
 
-  let date = ""; // We will use this below in JSX to parse string as date.
+  //This useCallback function taken a string argument of date and converts it into formatted date, e.g Day Month Date Year(Monday 1 Jan 1999)
+  const date = useCallback((data) => {
+    let dateString;
+    dateString = new Date(data);
+    return dateString.toDateString();
+  }, []);
+
+  const ready = versions && !loading; // This variable checks if data is present is versions and not in loading
+
+  const handleNav = useCallback(
+    (version) => window.location.replace(`/#version${version}`),
+    []
+  ); // This function helps in navigation between versions
 
   return (
     <>
       {loading && <h1 className="text-white">Loading...</h1>}
-      {versions &&
-        !loading &&
+      {ready &&
         versions.map((data, index) => {
           return (
             <li
@@ -27,22 +38,13 @@ const Sidebar = () => {
             >
               <a
                 className={"flex flex-col items-center h-12 cursor-pointer"}
-                onClick={(e) => {
-                  window.location.replace(`/#version${data.version}`);
-                }} // This onClick function will act as navigation between different section we have
+                onClick={() => handleNav(data.version)} // This onClick function will act as navigation between different section we have
               >
                 <div className="text-sm font-medium text-white">
-                  {" "}
-                  {data.version} <br />{" "}
+                  {data.version} <br />
                 </div>
-
                 <div className="text-sm font-medium text-white">
-                  {" "}
-                  {
-                    ((date = data.date),
-                    (date = new Date(data.date)),
-                    date.toDateString()) // Here we are parsing string as date
-                  }
+                  {date(data.date)}
                 </div>
               </a>
             </li>
