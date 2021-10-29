@@ -1,6 +1,8 @@
 # Canonic Forms
 
-A simple mobile responsive implementation of forms using `React` and `Ant Design` as Frontend Frameworks and **Canonic** as a **Backend**. The web-app looks like this:
+A simple mobile responsive implementation of forms using `React` and `Ant Design` as Frontend Frameworks and powered by [Canonic](https://canonic.dev/) as a **Backend**.
+
+The web-app looks like this:
 
 ![Screenshot](./screenshots/canonic-forms.png)
 
@@ -22,5 +24,9 @@ It is a self contained form that let's user submit their contact information to 
 ### Get a Demo
 
 It is a self contained form that let's user submit their contact information for your platform demo purposes. It first validates fields, shows up errors if any, takes the filled values and creates an entry in the backend. It uses the `useGetDemo` hook which contains the code to make an API call to the backend.
+
+### Connecting with your backend
+
+Find the `useContactUs.js` and `useGetDemo.js` files under the `hooks` folder. Just replace the URLs to your backend API URLs and you are good to go.
 
 ![Screenshot](./screenshots/entry.png)
