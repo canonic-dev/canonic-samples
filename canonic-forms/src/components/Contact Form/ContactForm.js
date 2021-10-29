@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "antd/dist/antd.css";
 import { Form, Input, Button, Typography, Spin, notification } from "antd";
-import UseContactUs from "../../hooks/apis/useContactUs";
+import UseContactUs from "../../utils/apis/useContactUs";
 
 const ContactForm = () => {
   const [form] = Form.useForm();
