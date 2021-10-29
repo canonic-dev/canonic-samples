@@ -53,6 +53,12 @@ Sample kanban board web app created using React,apollo and graphql.
 
 ![Screenshot](./kanban-board/screenshot.png)
 
-#### More coming soon 🚀
+### [🚨 Dynamic website popups](./dynamic-website-popups/)
+
+A demo showcasing how dynamic notifications can be built on React and powered by [Canonic](https://canonic.dev/) as the **Backend**.
+
+![Screenshot](./dynamic-website-popups/screenshots/1.png)
+
+### More coming soon 🚀
 
 #### Join the thriving 🌎 [Discord](https://discord.gg/9dyytsM) community to get help and share and brainstorm ideas.
