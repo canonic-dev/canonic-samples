@@ -1,43 +1,45 @@
 # Release Notes App
 
-The app is built using React, Tailwind, Graphql and Canonic. It displays the release notes along with their label tag.
+The app is a demo of how you can build a Release notes app using React, graphql and [Canonic](https://canonic.dev/) as the **Backend**
 
-![Screenshot](./screenshot.png)
+![Screenshot](./screenshots/screenshot-1.png)
 
-A sample app powered by [Canonic](https://canonic.dev/)
+**Contents for you release notes like version number and description is fetched from your Canonic project.**
 
-[Live Demo](https://eloquent-brown-404f49.netlify.app/)
-<br/>
+## Links
 
-### Connecting with your backend
+###[Demo](https://eloquent-brown-404f49.netlify.app/)
 
-To connect this application, to your backend server.
-Go to [App.js](./src/App.js) and change the uri in the apollo client
-to point to your backend.
+###[Tutorial]()
 
-### Other Sample projects
+## Running the example
 
-[Canonic Sample Projects](https://github.com/canonic-dev/canonic-samples)
+---
 
-### 30 Days of Canonic
+### Frontend
 
-[Visit](http://www.canonic.dev/30-days-of-canonic)
-
-### Developing
-
-Starts the development server on port `3000`.
-Tested on `nodeJS v15.14.0`
+The frontend is a simple create-react-app. After cloning, install the dependencies.
 
 ```
 yarn install
+```
+
+Then start the dev server
+
+```
 yarn start
 ```
 
-### Deploying
+### Backend
 
-Generates production assets in the `public` folder.
+You can find the sample backend project **Release Notes App** [here](https://app.canonic.dev/dashboard/marketplace/samples) and clone it.
 
-```
-yarn install
-yarn build
-```
+![Screenshot](./screenshots/screenshot-2.png)
+
+Copy the base url from the docs
+
+![Screenshot](./screenshots/screenshot-3.png)
+
+Change the value of URI in [App.js](./src/App.js)
+
+The example should now fetch data from the project you deployed.
