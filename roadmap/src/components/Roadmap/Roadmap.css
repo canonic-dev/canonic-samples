@@ -46,13 +46,24 @@
   font-size: 14px;
   font-weight: 500;
 }
+
+.roadmap-cards-item-upvote {
+  display: flex;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.roadmap-cards-item-upvote-count {
+  margin-left: 6px;
+}
+
 .roadmap-cards-item p {
   font-size: 12px;
   margin-top: 7px;
   line-height: 1.5;
 }
 
-svg.not-filled path{
+svg.not-filled path {
   fill: #fff;
   stroke: #000;
   stroke-width: 8px;

@@ -11,7 +11,7 @@ export const GET_ROADMAP = gql`
       title
       description
       upvotes {
-        upvotes
+        count
       }
       stage {
         value

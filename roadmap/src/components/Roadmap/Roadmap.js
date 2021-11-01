@@ -4,6 +4,9 @@ import { useQuery, useMutation } from "@apollo/client";
 import { GET_ROADMAP } from "../../gql/queries";
 import { UPVOTE } from "../../gql/mutations";
 
+import { ReactComponent as LoaderIcon } from "../../icons/loader.svg";
+import { ReactComponent as UpvoteIcon } from "../../icons/upvote.svg";
+
 import "./Roadmap.css";
 
 function Roadmap() {
@@ -11,6 +14,11 @@ function Roadmap() {
   const [upvoteTicket] = useMutation(UPVOTE, {
     context: {
       headers: {
+        /**
+         * Setting the authorization token for using Canonic APIs
+         * You can generate your own token for your API, visit this url
+         * for more information - https://docs.canonic.dev/concepts/projects/permissions
+         */
         Authorization:
           "617bdcfc530d0d0009c04985-c2ca6caf-485c-4bc1-8ac8-4b9defe2707e",
       },
@@ -52,6 +60,11 @@ function Roadmap() {
     },
   ];
 
+  /**
+   * Handles upvoting of tickets
+   * - Makes an API call to create an upvote
+   * - Saves the vote in localstorage
+   */
   const handleUpvoteTicket = React.useCallback(
     async (id) => {
       setUpvotes((upvotes) => [...upvotes, id]);
@@ -62,6 +75,10 @@ function Roadmap() {
     [upvoteTicket]
   );
 
+  /**
+   * Checks in the localstorage and upvotes state
+   * to find whether ticket is upvoted or not
+   */
   const isTicketUpvoted = React.useCallback(
     (id) => !!upvotes.find((t) => t === id) || localStorage.getItem(id),
     [upvotes]
@@ -70,40 +87,7 @@ function Roadmap() {
   return (
     <div className="roadmap">
       {loading ? (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          style={{
-            margin: "auto",
-            background: "none",
-            display: "block",
-            shapeRendering: "auto",
-            maxWidth: "30px",
-            marginTop: "-20px",
-          }}
-          width="200px"
-          height="200px"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="xMidYMid"
-        >
-          <circle
-            cx="50"
-            cy="50"
-            fill="none"
-            stroke="#4d5273"
-            strokeWidth="10"
-            r="35"
-            strokeDasharray="164.93361431346415 56.97787143782138"
-          >
-            <animateTransform
-              attributeName="transform"
-              type="rotate"
-              repeatCount="indefinite"
-              dur="1s"
-              values="0 50 50;360 50 50"
-              keyTimes="0;1"
-            ></animateTransform>
-          </circle>
-        </svg>
+        <LoaderIcon />
       ) : (
         <>
           {columnMap.map((column, i) => (
@@ -117,26 +101,16 @@ function Roadmap() {
                       className="roadmap-cards-item-content"
                       dangerouslySetInnerHTML={{ __html: t.description }}
                     />
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 100 125"
-                      style={{
-                        enableBackground: "new 0 0 100 100",
-                        maxWidth: "18px",
-                        cursor: "pointer",
-                      }}
-                      className={!isTicketUpvoted(t._id) && "not-filled"}
-                      onClick={() => handleUpvoteTicket(t._id)}
-                    >
-                      <g>
-                        <g>
-                          <path d="M81.7,40.4H64.6l3.6-17.9c0.5-2.5,0.1-5-1.2-7.1l0,0c-1.5-2.5-4.9-3-7-1.1L29.8,38.7c-1.2,1.1-1.8,2.6-1.8,4.1v33.1    c0,2.4,1.5,4.5,3.7,5.3l12.9,3.4c3.1,1.1,6.4,1.6,9.7,1.6h18c6.6,0,12.5-4.2,14.7-10.5l6.9-20c0.3-0.9,0.4-1.9,0.4-2.9v0    C94.3,46,88.7,40.4,81.7,40.4z" />
-                          <path d="M22.2,40.4H7.8c-1.5,0-2.8,1.2-2.8,2.8v34c0,1.5,1.2,2.7,2.7,2.8h14.5c1.5,0,2.8-1.2,2.8-2.8v-34    C25,41.6,23.7,40.4,22.2,40.4z" />
-                        </g>
-                      </g>
-                    </svg>
+                    <div className="roadmap-cards-item-upvote">
+                      <UpvoteIcon
+                        className={!isTicketUpvoted(t._id) ? "not-filled" : ""}
+                        onClick={() => handleUpvoteTicket(t._id)}
+                      />
+                      <div className="roadmap-cards-item-upvote-count">{`${
+                        parseInt(t.upvotes?.count) +
+                        (isTicketUpvoted(t._id) ? 1 : 0)
+                      }`}</div>
+                    </div>
                   </div>
                 ))}
               </div>
