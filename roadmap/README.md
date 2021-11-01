@@ -5,7 +5,7 @@ A Roadmap application built using React, Graphql and Canonic as the backend.
 
 A sample app powered by [Canonic](https://canonic.dev/)
 
-[Link]()
+[Link](https://canonic-roadmap.netlify.app/)
 <br/>
 
 ### Connecting with your backend
