@@ -102,8 +102,8 @@ extension CategoriesViewController: UITableViewDataSource, UITableViewDelegate {
 extension CategoriesViewController {
     
     @IBAction func playClicked(_ sender: LoadingButton) {
-        if cardsMapping[categories[selectedIndex.row].key] == nil {
-            getCardsForCategory(category: categories[selectedIndex.row].key)
+        if cardsMapping[categories[selectedIndex.row].id] == nil {
+            getCardsForCategory(categoryId: categories[selectedIndex.row].id)
         } else {
             pushToCardsVC()
         }
@@ -116,7 +116,7 @@ extension CategoriesViewController {
     fileprivate func pushToCardsVC() {
         let cardsVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: StoryBoardID.CardsViewController) as? CardsViewController
         cardsVC?.players = players
-        cardsVC?.allCards = cardsMapping[categories[selectedIndex.row].key]!
+        cardsVC?.allCards = cardsMapping[categories[selectedIndex.row].id]!
         self.navigationController?.pushViewController(cardsVC!, animated: true)
     }
 }
@@ -126,25 +126,25 @@ extension CategoriesViewController {
 
 extension CategoriesViewController {
     
-    fileprivate func getCardsForCategory(category: String) {
+    fileprivate func getCardsForCategory(categoryId: String) {
         fetchState = .loading
         categoriesTableVC.allowsSelection = false
         playButton.showLoading()
-        CanonicClient.sharedInstance().getCardForCategory(category: category) { [weak self] (cards) in
-            self?.postCardFetchActions(state: .success, category: category, cards: cards)
+        CanonicClient.sharedInstance().getCardForCategory(categoryId: categoryId) { [weak self] (cards) in
+            self?.postCardFetchActions(state: .success, categoryId: categoryId, cards: cards)
         } faliure: { [weak self] (errorString) in
-            self?.postCardFetchActions(state: .failure, category: category, cards: [Cards]())
+            self?.postCardFetchActions(state: .failure, categoryId: categoryId, cards: [Cards]())
         }
     }
     
-    fileprivate func postCardFetchActions(state: Loading, category: String, cards: [Cards]) {
+    fileprivate func postCardFetchActions(state: Loading, categoryId: String, cards: [Cards]) {
         DispatchQueue.main.async {
             switch state {
             case .success:
                 self.fetchState = .success
                 self.playButton.hideLoading()
                 self.categoriesTableVC.allowsSelection = true
-                self.cardsMapping[category] = cards
+                self.cardsMapping[categoryId] = cards
                 self.pushToCardsVC()
                 break
             case .failure:

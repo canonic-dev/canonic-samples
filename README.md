@@ -67,6 +67,38 @@ Roadmap app created with React, GraphQL and Canonic as a backend.
 
 <br/>
 
+### [🚨 Dynamic website popups](./dynamic-website-popups/)
+
+A demo showcasing how dynamic notifications can be built on React and powered by [Canonic](https://canonic.dev/) as the **Backend**.
+
+![Screenshot](./dynamic-website-popups/screenshots/1.png)
+
+---
+
+<br/>
+
+### [Release Notes](./release-notes-app/)
+
+A React js project using Tailwind CSS and Canonic.
+
+![Screenshot](./release-notes-app/screenshots/screenshot-1.png)
+
+---
+
+<br/>
+
+
+### [Forms](./canonic-forms/)
+
+Simple web forms for **Contact us** and **Get a Demo** build with React and Ant Design, powered by by [Canonic](https://canonic.dev/) as the **Backend**..
+
+![Screenshot](./canonic-forms/screenshots/canonic-forms.png)
+
+---
+
+<br/>
+
+
 #### More coming soon 🚀
 
 #### Join the thriving 🌎 [Discord](https://discord.gg/9dyytsM) community to get help and share and brainstorm ideas.
