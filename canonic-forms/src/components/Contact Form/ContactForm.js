@@ -13,6 +13,18 @@ const ContactForm = () => {
   const { Title, Text } = Typography;
   const [loading, setLoading] = useState(false);
 
+  const handleSubmission = React.useCallback(
+    (result) => {
+      if (result.error) {
+        showNotification("error", NOTIFICATION_DETAILS.error);
+      } else {
+        showNotification("success", NOTIFICATION_DETAILS.success);
+        form.resetFields();
+      }
+    },
+    [form]
+  );
+
   const onSubmit = React.useCallback(async () => {
     let values;
     try {
@@ -24,16 +36,7 @@ const ContactForm = () => {
     const result = await UseContactUs(values);
     setLoading(false);
     handleSubmission(result);
-  }, [form]);
-
-  const handleSubmission = (result) => {
-    if (result.error) {
-      showNotification("error", NOTIFICATION_DETAILS.error);
-    } else {
-      showNotification("success", NOTIFICATION_DETAILS.success);
-      form.resetFields();
-    }
-  };
+  }, [form, handleSubmission]);
 
   return (
     <div>
