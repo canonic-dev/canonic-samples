@@ -1,0 +1,85 @@
+.app {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-body {
+  background-color: #020d57;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+}
+
+.app-notification {
+  position: absolute;
+  background-color: #4760ff;
+  padding: 8px;
+  width: 100%;
+  animation: animate-in 0.15s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+  color: #fff;
+}
+
+.app-notification p {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+h3 {
+  font-size: calc(10px + 2vmin);
+  margin-bottom: 8px;
+}
+
+.app-body p {
+  font-size: calc(2px + 2vmin);
+  margin: 0;
+  opacity: 0.5;
+}
+
+.ctas {
+  margin: 24px;
+}
+
+.cta {
+  margin: 16px;
+  border: none;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 1px solid #eee;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.15s ease-out;
+}
+
+.cta.active {
+  color: #fff;
+  background-color: #4760ff;
+  border-color: #4760ff;
+}
+
+@keyframes animate-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.98) translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
