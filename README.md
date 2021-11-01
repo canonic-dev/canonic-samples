@@ -53,23 +53,41 @@ Sample kanban board web app created using React,apollo and graphql.
 
 ![Screenshot](./kanban-board/screenshot.png)
 
+---
+
+<br/>
+
 ### [🚨 Dynamic website popups](./dynamic-website-popups/)
 
 A demo showcasing how dynamic notifications can be built on React and powered by [Canonic](https://canonic.dev/) as the **Backend**.
 
 ![Screenshot](./dynamic-website-popups/screenshots/1.png)
 
-### [The Release Notes Appp](./release-notes-app/)
+---
+
+<br/>
+
+### [Release Notes](./release-notes-app/)
 
 A React js project using Tailwind CSS and Canonic.
 
-![Screenshot](./release-notes-app/screenshot.png)
+![Screenshot](./release-notes-app/screenshots/screenshot-1.png)
+
+---
+
+<br/>
+
 
 ### [Forms](./canonic-forms/)
 
 Simple web forms for **Contact us** and **Get a Demo** build with React and Ant Design, powered by by [Canonic](https://canonic.dev/) as the **Backend**..
 
 ![Screenshot](./canonic-forms/screenshots/canonic-forms.png)
+
+---
+
+<br/>
+
 
 #### More coming soon 🚀
 
