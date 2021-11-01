@@ -57,6 +57,16 @@ Sample kanban board web app created using React,apollo and graphql.
 
 <br/>
 
+### [Roadmap](./roadmap/)
+
+Roadmap app created with React, GraphQL and Canonic as a backend.
+
+![Screenshot](./roadmap/screenshot.png)
+
+---
+
+<br/>
+
 ### [🚨 Dynamic website popups](./dynamic-website-popups/)
 
 A demo showcasing how dynamic notifications can be built on React and powered by [Canonic](https://canonic.dev/) as the **Backend**.
