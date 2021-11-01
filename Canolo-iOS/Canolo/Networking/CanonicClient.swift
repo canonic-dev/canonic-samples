@@ -51,11 +51,11 @@ class CanonicClient: APIHelper {
         }
     }
     
-    func getCardForCategory(category: String,
+    func getCardForCategory(categoryId: String,
                             success: @escaping (_ categories: [Cards]) -> Void,
                             faliure: @escaping (_ error: String?) -> Void) {
         
-        let requestURL: URL = urlForRequest(pathExtension: "\(DataPoints.cardsWithCategory)\(category)")
+        let requestURL: URL = urlForRequest(pathExtension: "\(DataPoints.cardsWithCategory)\(categoryId)")
         makeRequest(forURL: requestURL, requestMethod: .GET) { (data, response) in
             
             do {

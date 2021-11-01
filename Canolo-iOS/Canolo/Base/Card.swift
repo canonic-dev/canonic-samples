@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Category
+// MARK: - Card
 struct Card: Decodable {
     let cards: [Cards]
     
