@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol PlayerListTableCellDelegate: class {
+protocol PlayerListTableCellDelegate: AnyObject {
     func removeTapped(_ cell: PlayerListTableCell)
 }
 
