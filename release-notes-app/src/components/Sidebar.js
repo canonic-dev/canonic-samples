@@ -28,28 +28,27 @@ const Sidebar = () => {
 
   return (
     <>
-      {loading && <h1 className="text-white">Loading...</h1>}
+      {loading && <h1 className="text-gray-900">Loading...</h1>}
       {ready &&
-        versions.map((data, index) => {
-          return (
-            <li
-              key={index}
-              className={"border-solid border-2 border-light-blue-500 m-2"}
-            >
-              <a
-                className={"flex flex-col items-center h-12 cursor-pointer"}
-                onClick={() => handleNav(data.version)} // This onClick function will act as navigation between different section we have
-              >
-                <div className="text-sm font-medium text-white">
-                  {data.version} <br />
-                </div>
-                <div className="text-sm font-medium text-white">
-                  {date(data.date)}
-                </div>
-              </a>
-            </li>
-          );
-        })}
+        versions
+          .map((data, index) => {
+            return (
+              <li key={index} className={"m-2 ml-4 pb-4 border-b-2"}>
+                <a
+                  className={"flex flex-col items-left h-14	 cursor-pointer "}
+                  onClick={() => handleNav(data.version)} // This onClick function will act as navigation between different section we have
+                >
+                  <div className="text-gray-900 text-2xl font-bold	">
+                    {data.version} <br />
+                  </div>
+                  <div className="text-sm font-medium text-gray-500">
+                    {date(data.date)}
+                  </div>
+                </a>
+              </li>
+            );
+          })
+          .reverse()}
     </>
   );
 };

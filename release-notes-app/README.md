@@ -8,7 +8,7 @@ The app is a demo of how you can build a Release notes app using React, graphql 
 
 ## Links
 
-### [Demo](https://eloquent-brown-404f49.netlify.app/)
+### [Demo](https://canonic-release-notes.netlify.app)
 
 ### [Tutorial]()
 

@@ -41,48 +41,55 @@ const Main = () => {
     <>
       {versions &&
         !loading &&
-        versions.map((data, index) => {
-          return (
-            <div className="tab-content tab-space w-5/6" key={index}>
+        versions
+          .map((data, index) => {
+            return (
               <div
-                className={
-                  "text-white bg-blue-600 text-center text-2xl p-2 mt-16 w-40 my-8 mx-auto"
-                }
+                className="tab-content tab-space w-5/6 divide-y divide-light-blue-400"
+                key={index}
               >
-                Version {data.version}
-              </div>
-              <div className={"block"}>
-                <div>
-                  {data.description.map((item) => {
-                    // The Description in our API is a 'field set' and it two fields, 1. Details and  2. Label
-                    const details = item.details; // Here we are accessing the details, details contains all the text.
-                    const label = item.types.label; // Here we are accessing picker option's label. There are total 4 labels. 1. Security Fixes 2. Bug fixes, 3. Changes and 4. Know issue
-                    return (
-                      <section
-                        className="flex flex-col  mb-10"
-                        id={`version${data.version}`}
-                      >
-                        <div
-                          className={`${setColor(
-                            label
-                          )} w-28 h-8 leading-8 ml-10 text-center font-bold shadow-lg mt-10 mb-3 text-white`}
-                        >
-                          {label}
-                        </div>
-                        <div // Here we are using dangerouslySetInnerHTML because we receive the html code from API, we parse it using dangerouslySetInnerHTML
-                          className="text-left ml-20 text-white"
-                          dangerouslySetInnerHTML={{
-                            __html: details,
-                          }}
-                        ></div>
-                      </section>
-                    );
-                  })}
+                <div
+                  className={
+                    "text-gray-900 text-2xl p-2 mt-16 w-40 my-4 ml-8 font-bold"
+                  }
+                >
+                  Version {data.version}
+                </div>
+                <div className={"block"}>
+                  <div>
+                    {data.description
+                      .map((item) => {
+                        // The Description in our API is a 'field set' and it two fields, 1. Details and  2. Label
+                        const details = item.details; // Here we are accessing the details, details contains all the text.
+                        const label = item.types.label; // Here we are accessing picker option's label. There are total 4 labels. 1. Security Fixes 2. Bug fixes, 3. Changes and 4. Know issue
+                        return (
+                          <section
+                            className="flex flex-col  mb-10"
+                            id={`version${data.version}`}
+                          >
+                            <div
+                              className={`${setColor(
+                                label
+                              )} w-36 h-auto leading-8 ml-10 text-left font-bold shadow-lg mt-10 mb-3 text-white rounded-md`}
+                            >
+                              <span className="ml-4">{label}</span>
+                            </div>
+                            <div // Here we are using dangerouslySetInnerHTML because we receive the html code from API, we parse it using dangerouslySetInnerHTML
+                              className="text-left ml-20 mt-4 text-gray-900"
+                              dangerouslySetInnerHTML={{
+                                __html: details,
+                              }}
+                            ></div>
+                          </section>
+                        );
+                      })
+                      .reverse()}
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+          .reverse()}
     </>
   );
 };

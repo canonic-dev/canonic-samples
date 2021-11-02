@@ -1,7 +1,7 @@
 import { ApolloProvider, InMemoryCache, ApolloClient } from "@apollo/client";
 import { Helmet } from "react-helmet";
 
-import UI from "./components/ui";
+import UI from "./components/UI";
 
 //Connecting with the Canonic API
 const client = new ApolloClient({
