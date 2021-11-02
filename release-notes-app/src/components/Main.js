@@ -49,7 +49,9 @@ const Main = () => {
                 key={index}
               >
                 <div
-                  className={"text-gray-900 text-2xl p-2 mt-16 w-40 my-4 ml-8"}
+                  className={
+                    "text-gray-900 text-2xl p-2 mt-16 w-40 my-4 ml-8 font-bold"
+                  }
                 >
                   Version {data.version}
                 </div>

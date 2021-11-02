@@ -33,15 +33,15 @@ const Sidebar = () => {
         versions
           .map((data, index) => {
             return (
-              <li key={index} className={"m-2 ml-4"}>
+              <li key={index} className={"m-2 ml-4 pb-4 border-b-2"}>
                 <a
-                  className={"flex flex-col items-left h-12 cursor-pointer"}
+                  className={"flex flex-col items-left h-14	 cursor-pointer "}
                   onClick={() => handleNav(data.version)} // This onClick function will act as navigation between different section we have
                 >
-                  <div className="text-sm font-medium text-gray-900">
+                  <div className="text-gray-900 text-2xl font-bold	">
                     {data.version} <br />
                   </div>
-                  <div className="text-sm font-medium text-gray-900">
+                  <div className="text-sm font-medium text-gray-500">
                     {date(data.date)}
                   </div>
                 </a>
