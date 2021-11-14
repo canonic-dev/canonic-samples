@@ -1,5 +1,88 @@
 import Table from "react-bootstrap/Table";
 
+const dummyData = [
+  {
+    Name: "Simranjot",
+    Email: "simranjot@canonic.dev",
+    "Current Plan": "Enterprise",
+    "Subscription Type": "Yearly",
+    "Subscription Cycle": "2021-2022",
+    "Total Purchase": "$1250",
+  },
+  {
+    Name: "Simranjot",
+    Email: "simranjot@canonic.dev",
+    "Current Plan": "Enterprise",
+    "Subscription Type": "Yearly",
+    "Subscription Cycle": "2021-2022",
+    "Total Purchase": "$1250",
+  },
+  {
+    Name: "Simranjot",
+    Email: "simranjot@canonic.dev",
+    "Current Plan": "Enterprise",
+    "Subscription Type": "Yearly",
+    "Subscription Cycle": "2021-2022",
+    "Total Purchase": "$1250",
+  },
+  {
+    Name: "Simranjot",
+    Email: "simranjot@canonic.dev",
+    "Current Plan": "Enterprise",
+    "Subscription Type": "Yearly",
+    "Subscription Cycle": "2021-2022",
+    "Total Purchase": "$1250",
+  },
+  {
+    Name: "Simranjot",
+    Email: "simranjot@canonic.dev",
+    "Current Plan": "Enterprise",
+    "Subscription Type": "Yearly",
+    "Subscription Cycle": "2021-2022",
+    "Total Purchase": "$1250",
+  },
+  {
+    Name: "Simranjot",
+    Email: "simranjot@canonic.dev",
+    "Current Plan": "Enterprise",
+    "Subscription Type": "Yearly",
+    "Subscription Cycle": "2021-2022",
+    "Total Purchase": "$1250",
+  },
+  {
+    Name: "Simranjot",
+    Email: "simranjot@canonic.dev",
+    "Current Plan": "Enterprise",
+    "Subscription Type": "Yearly",
+    "Subscription Cycle": "2021-2022",
+    "Total Purchase": "$1250",
+  },
+  {
+    Name: "Simranjot",
+    Email: "simranjot@canonic.dev",
+    "Current Plan": "Enterprise",
+    "Subscription Type": "Yearly",
+    "Subscription Cycle": "2021-2022",
+    "Total Purchase": "$1250",
+  },
+  {
+    Name: "Simranjot",
+    Email: "simranjot@canonic.dev",
+    "Current Plan": "Enterprise",
+    "Subscription Type": "Yearly",
+    "Subscription Cycle": "2021-2022",
+    "Total Purchase": "$1250",
+  },
+  {
+    Name: "Simranjot",
+    Email: "simranjot@canonic.dev",
+    "Current Plan": "Enterprise",
+    "Subscription Type": "Yearly",
+    "Subscription Cycle": "2021-2022",
+    "Total Purchase": "$1250",
+  },
+];
+
 const InformationTable = () => {
   return (
     <div class="table-responsive">
