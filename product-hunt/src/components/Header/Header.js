@@ -14,7 +14,7 @@ const Header = () => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
-          margin: 2,
+          marginBottom: "20px",
         }}
       >
         <Avatar
@@ -30,7 +30,8 @@ const Header = () => {
         </Avatar>
         <Button
           variant="outlined"
-          size="medium"
+          size="small"
+          disableRipple="true"
           sx={{
             color: "#da552f",
             borderColor: "#da552f",
@@ -46,7 +47,7 @@ const Header = () => {
           Submit
         </Button>
       </Box>
-      <Divider variant="middle" />
+      <Divider variant="fullWidth" />
     </Box>
   );
 };
