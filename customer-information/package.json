@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.4.17",
     "bootstrap": "5.1.3",
+    "graphql": "15.7.1",
     "node-sass": "4.14.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.2",
