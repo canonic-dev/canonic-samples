@@ -5,9 +5,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
-import "./index.css";
-import App from "./App";
+//Local dependencies
 import Container from "./components/Container";
+import "./index.css";
 
 const client = new ApolloClient({
   uri: "https://pr-dashboard.hem.staging.canonic.dev/graphql", //Replace this with your own cloned project's URI.

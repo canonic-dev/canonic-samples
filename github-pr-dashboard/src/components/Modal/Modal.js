@@ -3,13 +3,24 @@
 //React's dependencies
 import { React, useCallback } from "react";
 
-//Material UI's dependencies
-import { Avatar, Typography, Fade, Modal, Box, Backdrop } from "@mui/material";
+//Material UI's and React-Markdown dependencies
+import {
+  Avatar,
+  Typography,
+  Fade,
+  Modal,
+  Box,
+  Backdrop,
+  Fab,
+  Button,
+} from "@mui/material";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 //Local stylesheet
 import "./style.css";
 
-export default function Modals({ pr, open, setOpen }) {
+export default function Modals({ pr, containerName, open, setOpen }) {
   //Receving PR data, open and setOpen state from 'List' component
   const handleClose = useCallback(() => {
     //This function toggled the setOpen state
@@ -32,7 +43,10 @@ export default function Modals({ pr, open, setOpen }) {
         {pr && (
           <Fade in={open}>
             <Box className="box">
-              <div className="avatar">
+              <Fab variant="extended" size="small" sx={{ mb: 2 }}>
+                {containerName}
+              </Fab>
+              <div className="avatars">
                 {/* Displays user's profile picture */}
                 <Avatar
                   alt={pr.user.login}
@@ -56,8 +70,9 @@ export default function Modals({ pr, open, setOpen }) {
                 id="transition-modal-description"
                 sx={{ mt: 2, mb: 2 }}
               >
-                {/* Displays the PR's body content */}
-                {pr.body}
+                {/* Displays the PR's body content. Using react-markdown to display markdown */}
+
+                <ReactMarkdown children={pr.body} remarkPlugins={[remarkGfm]} />
               </Typography>
               {/* This will be displayed only if the PR has an assignee assigned */}
               {pr.assignee && pr.assignee.login.length > 1 && (
@@ -80,9 +95,20 @@ export default function Modals({ pr, open, setOpen }) {
               <Typography id="transition-modal-description" sx={{ mt: 2 }}>
                 {
                   // Displays the hyperlink of PR
-                  <a href={pr.html_url} target="_blank" rel="noreferrer">
-                    PR Link
-                  </a>
+
+                  <Button
+                    variant="contained"
+                    href={pr.html_url}
+                    target="_blank"
+                    rel="noreferrer"
+                    sx={{ mt: 2 }}
+                  >
+                    Open PR
+                  </Button>
+
+                  // <a href={pr.html_url} target="_blank" rel="noreferrer">
+                  //   PR Link
+                  // </a>
                 }
               </Typography>
             </Box>

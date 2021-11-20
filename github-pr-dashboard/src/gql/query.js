@@ -31,6 +31,11 @@ export const GET_PR = gql`
           avatar_url #avatar_url has the assignee's profile picture link of the user
           login #login has assignee's username
         }
+        labels {
+          #labels contains the array of labels. Here we will be just needing name and color
+          name #name has title of the label
+          color #color contains the hexadecimal value of color without a '#'
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 //This component renders the columns and passes the filtered data to next component(List)
 
 //React's and apollo's dependencies
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useState, useMemo } from "react";
 import { useQuery } from "@apollo/client";
 
 //Material UI dependencies
@@ -24,34 +24,36 @@ const Container = () => {
   const { loading, data: prData } = useQuery(GET_PR); //Fetching all of the PRs and loading state
 
   const [containers, setContainers] = useState(); //Using this state to populate the containers.
-  const [opened, setOpened] = useState(); //Using this state to store 'open' status PRs
-  const [closed, setClosed] = useState(); //Using this state to store 'closed' status PRs
-  const [assigned, setAssigned] = useState(); //Using this state to store prs that have someone assigned to it.
-  const [draft, setDraft] = useState(); //Using this state to store the draft PRs
+
   useEffect(() => {
     if (containerData) {
       setContainers(containerData.containers); //Setting up the container state
     }
-    if (prData) {
-      const pullRequests = prData.pullRequests.map((item) => item.github);
+  }, [containerData]); //Re-rendering state whenever  Container data changes
 
-      const openPr = pullRequests[0].filter((item) => item.state === "open");
-      setOpened(openPr); // Filtering and populating all the PRs with 'open' status
-
-      const closedPr = pullRequests[0]
-        .filter((item) => item.state === "closed")
-        .slice(0, 15);
-      setClosed(closedPr); // Filtering and populating all the PRs with 'closed' status
-
-      const draftPr = pullRequests[0].filter((item) => item.draft === true);
-      setDraft(draftPr); // Filtering and populating all the draft PRs
-
-      const assignedPr = pullRequests[0].filter(
+  const pullRequests = useMemo(
+    () => prData?.pullRequests?.map((item) => item.github)?.[0] || [],
+    [prData?.pullRequests] //Mapping over the data and assigning it to 'pullRequests' variable
+  );
+  const opened = useMemo(
+    () => pullRequests.filter((item) => item.state === "open"),
+    [pullRequests] // Filtering and populating all the PRs with 'open' status
+  );
+  const closed = useMemo(
+    () => pullRequests.filter((item) => item.state === "closed").slice(0, 15),
+    [pullRequests] // Filtering and populating all the PRs with 'closed' status
+  );
+  const draft = useMemo(
+    () => pullRequests.filter((item) => item.draft === true),
+    [pullRequests] // Filtering and populating all the draft PRs
+  );
+  const assigned = useMemo(
+    () =>
+      pullRequests.filter(
         (item) => item.assignee !== null && item.assignee.login.length > 1
-      );
-      setAssigned(assignedPr); // Filtering and populating all the PRs who has assignee.
-    }
-  }, [prData, containerData]); //Re-rendering state whenever PR or Container data changes
+      ),
+    [pullRequests] // Filtering and populating all the PRs who has assignee.
+  );
 
   return (
     <>
@@ -88,22 +90,46 @@ const Container = () => {
           containers &&
           containers.map((containerName, i) => (
             <Card className="card" key={i}>
+              {/* <Stack
+                direction="row"
+                alignItems="center"
+                justifyContent="space-between"
+                sx={{ px: 2, py: 1, bgcolor: "#2196f3" }}
+              >
+              
+              </Stack> */}
               <Typography gutterBottom variant="h5" component="div">
                 {containerName.title}
               </Typography>
               <CardContent className="cardContent">
                 {/* There are in total 4 identifier created on the backend (merge,review,assigned,draft) based on that associating the PRs */}
                 {containerName.identifier === "merge" && closed && (
-                  <List data={closed} key={i} />
+                  <List
+                    data={closed}
+                    key={i}
+                    identifier={containerName.identifier}
+                  />
                 )}
                 {containerName.identifier === "review" && draft && (
-                  <List data={draft} key={i} />
+                  <List
+                    data={draft}
+                    key={i}
+                    identifier={containerName.identifier}
+                  />
                 )}
                 {containerName.identifier === "assigned" && assigned && (
-                  <List data={assigned} key={i} />
+                  <List
+                    data={assigned}
+                    key={i}
+                    identifier={containerName.identifier}
+                  />
                 )}
                 {containerName.identifier === "pending" && opened && (
-                  <List data={opened} key={i} />
+                  <List
+                    data={opened}
+                    key={i}
+                    identifier={containerName.identifier}
+                  />
                 )}
               </CardContent>
             </Card>

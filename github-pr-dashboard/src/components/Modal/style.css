@@ -12,8 +12,8 @@
   padding: 4rem;
 }
 
-.avatar {
+.avatars {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
+  margin: 1rem 0 2rem 0;
 }
