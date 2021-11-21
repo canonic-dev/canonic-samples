@@ -34,7 +34,6 @@ const List = ({ data, identifier }) => {
           <Typography variant="body1" color="text.secondary">
             {/* Displays the PR's title */}
             {item.title}
-            {console.log(identifier)}
             {/* Displays the labels associated with the PR, mapping over them since there could be more than 1 labels */}
             {item.labels.map((item) => (
               <Fab
@@ -45,7 +44,9 @@ const List = ({ data, identifier }) => {
                   mr: -1,
                   transform: "scale(0.7)",
                   backgroundColor: `#${item.color}`,
-                  cursor: "default",
+                  "&:hover": {
+                    backgroundColor: `#${item.color}`,
+                  },
                 }}
               >
                 <Typography variant="body2">{item.name}</Typography>

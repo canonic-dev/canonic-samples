@@ -1,7 +1,7 @@
 //This component renders the columns and passes the filtered data to next component(List)
 
 //React's and apollo's dependencies
-import { React, useEffect, useState, useMemo } from "react";
+import { React, useEffect, useState, useMemo, useCallback } from "react";
 import { useQuery } from "@apollo/client";
 
 //Material UI dependencies
@@ -12,6 +12,7 @@ import {
   Box,
   Toolbar,
   Typography,
+  Stack,
 } from "@mui/material";
 
 //Local dependencies
@@ -55,6 +56,28 @@ const Container = () => {
     [pullRequests] // Filtering and populating all the PRs who has assignee.
   );
 
+  // We are using this util function to assign a background color based on the column's identifier.
+  const setColor = useCallback((identifier) => {
+    let color = "";
+    switch (identifier) {
+      case "merge":
+        color = "#6fbf73";
+        break;
+      case "pending":
+        color = "#4dabf5";
+        break;
+      case "assigned":
+        color = "#ffcd38";
+        break;
+      case "review":
+        color = "#ffa733";
+        break;
+      default:
+        color = "";
+    }
+    return color;
+  }, []);
+
   return (
     <>
       {/* The Box component by the MaterialUI is responsible for display the header */}
@@ -90,17 +113,33 @@ const Container = () => {
           containers &&
           containers.map((containerName, i) => (
             <Card className="card" key={i}>
-              {/* <Stack
+              {/* The Stack is a Material UI component, it will display a content inside a square box */}
+              <Stack
                 direction="row"
                 alignItems="center"
                 justifyContent="space-between"
-                sx={{ px: 2, py: 1, bgcolor: "#2196f3" }}
+                sx={{
+                  px: 2,
+                  py: 1,
+                  mb: 2,
+                  bgcolor: setColor(containerName.identifier), //Here we are calling the setColor function to dynamically assigning a background color based on name/identifier of the container.
+                  color: "#FFFFFF",
+                  borderRadius: "4px",
+                }}
               >
-              
-              </Stack> */}
-              <Typography gutterBottom variant="h5" component="div">
-                {containerName.title}
-              </Typography>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  sx={{
+                    width: "100%",
+                    paddingTop: "0.5rem",
+                    textAlign: "center",
+                  }}
+                >
+                  {containerName.title}
+                </Typography>
+              </Stack>
+
               <CardContent className="cardContent">
                 {/* There are in total 4 identifier created on the backend (merge,review,assigned,draft) based on that associating the PRs */}
                 {containerName.identifier === "merge" && closed && (
