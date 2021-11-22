@@ -18,7 +18,7 @@ const InformationTable = () => {
 
   return (
     <div class="table-responsive">
-      <Table class="table table-hove">
+      <Table class="table table-hover">
         <thead class="table-light">
           <tr>
             <th>#</th>
