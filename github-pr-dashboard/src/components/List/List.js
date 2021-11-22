@@ -20,7 +20,7 @@ const List = ({ data, identifier }) => {
     setModalData(pr); //This data is used in Modal to display more info about the particular PR
     setContainersName(identifier); //This data will be used in modal to display which column the particular PR belonged to
   }, []);
-  //TODO: REMOVE THIS
+
   return (
     <>
       {/* Mapping over the PR data prop we received from 'Container' component */}
