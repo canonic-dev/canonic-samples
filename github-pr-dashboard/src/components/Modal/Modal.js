@@ -94,8 +94,7 @@ export default function Modals({ pr, containerName, open, setOpen }) {
               )}
               <Typography id="transition-modal-description" sx={{ mt: 2 }}>
                 {
-                  // Displays the hyperlink of PR
-
+                  // Displays the Button containing the link of the PR
                   <Button
                     variant="contained"
                     href={pr.html_url}
@@ -105,10 +104,6 @@ export default function Modals({ pr, containerName, open, setOpen }) {
                   >
                     Open PR
                   </Button>
-
-                  // <a href={pr.html_url} target="_blank" rel="noreferrer">
-                  //   PR Link
-                  // </a>
                 }
               </Typography>
             </Box>
