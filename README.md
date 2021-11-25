@@ -87,7 +87,6 @@ A React js project using Tailwind CSS and Canonic.
 
 <br/>
 
-
 ### [Forms](./canonic-forms/)
 
 Simple web forms for **Contact us** and **Get a Demo** build with React and Ant Design, powered by by [Canonic](https://canonic.dev/) as the **Backend**..
@@ -98,6 +97,15 @@ Simple web forms for **Contact us** and **Get a Demo** build with React and Ant 
 
 <br/>
 
+### [Github PR Dashboard](./github-pr-dashboard/)
+
+A dashboard for **Github Pull Requests** build with React and Material UI, powered by by [Canonic](https://canonic.dev/) as the **Backend**..
+
+![Screenshot](./github-pr-dashboard/screenshots/screenshot-1.png)
+
+---
+
+<br/>
 
 #### More coming soon 🚀
 
