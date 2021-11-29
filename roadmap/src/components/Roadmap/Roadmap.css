@@ -68,3 +68,14 @@ svg.not-filled path {
   stroke: #000;
   stroke-width: 8px;
 }
+
+@media (max-width: 600px) {
+  .roadmap {
+    flex-direction: column;
+  }
+
+  .roadmap > div:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 26px;
+  }
+}
