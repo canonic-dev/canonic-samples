@@ -1,20 +1,5 @@
 //This component render Description as per the version name.
-
-import { useQuery } from "@apollo/client";
-import { useEffect, useState } from "react";
-import { GET_VERSIONS } from "../gql/query";
-
-const Main = () => {
-  const [versions, setVersions] = useState();
-  const { data, loading } = useQuery(GET_VERSIONS);
-
-  useEffect(() => {
-    if (data) {
-      let getVersions = data.versions;
-      setVersions(getVersions);
-    }
-  }, [data]); // We are fetching 'Versions' and feeding it to useState hook
-
+const Main = ({ versions, loading }) => {
   const setColor = (label) => {
     // We are using this util function to assign a color the label.
     let color = "bg-red-600";
