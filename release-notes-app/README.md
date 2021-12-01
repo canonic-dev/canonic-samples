@@ -10,7 +10,7 @@ The app is a demo of how you can build a Release notes app using React, graphql 
 
 ### [Demo](https://canonic-release-notes.netlify.app)
 
-### [Tutorial]()
+### [Tutorial](https://dev.to/canonic/publish-changelog-for-your-product-using-react-and-tailwind-nmn)
 
 ## Running the example
 
