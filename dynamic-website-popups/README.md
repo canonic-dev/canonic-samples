@@ -8,7 +8,7 @@ A demo showcasing how dynamic notifications can be built on React and powered by
 
 ## Links
 
-#### [Demo]()
+#### [Demo](https://dynamic-notifications.netlify.app/?utm_source=github&utm_medium=organic_code&utm_campaign=30daysofcanonic_uc_1&utm_content=day_4)
 
 #### [Tutorial]()
 
@@ -22,11 +22,7 @@ Fetches a random popup from your project's database and displays it. All the log
 
 ### Popup Campaign
 
-When we were doing [#30DaysOfCanonic](link://) we used this on our website to keep our users up to date with what was going on. The popup changed daily linking to the content we published on that day.
-
-## Running the example
-
----
+When we were doing [#30DaysOfCanonic](https://www.canonic.dev/30-days-of-canonic/?utm_source=github&utm_medium=organic_samples&utm_campaign=30daysofcanonic_uc_1&utm_content=day_4) we used this on our website to keep our users up to date with what was going on. The popup changed daily linking to the content we published on that day.
 
 ### Frontend
 
