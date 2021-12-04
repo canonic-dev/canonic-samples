@@ -6,6 +6,8 @@ The web-app looks like this:
 
 ![Screenshot](./screenshots/canonic-forms.png)
 
+[**Live Demo**](https://canonic-forms.netlify.app)
+
 The app follows a tabbed layout, each tab representing a separate form. One you fill out the required details, on submit it'll make a `POST` request to the canonic's sample project and sumit your details.
 
 ### `yarn start`
