@@ -99,6 +99,17 @@ Simple web forms for **Contact us** and **Get a Demo** build with React and Ant 
 <br/>
 
 
+### [Postgres Dashboard](./postgres-dashboard/)
+
+A dashboard built on top of PostgresSQL database, powered by Canonic.
+
+![Screenshot](./postgres-dashboard/screenshot.png)
+
+---
+
+<br/>
+
+
 #### More coming soon 🚀
 
 #### Join the thriving 🌎 [Discord](https://discord.gg/9dyytsM) community to get help and share and brainstorm ideas.

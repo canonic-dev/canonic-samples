@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Postgres Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Dashboard built using React, Rest API and Canonic as the backend - connected to a PostgresSQL database.
+![Screenshot](./screenshot.png)
 
-## Available Scripts
+A sample app powered by [Canonic](https://canonic.dev/?utm_source=github&utm_medium=organic_samples&utm_campaign=30daysofcanonic_uc_2&utm_term=canonic&utm_content=day_8)
 
-In the project directory, you can run:
+[Link](https://canonic-postgres-dashboard.netlify.app/)
+<br/>
 
-### `yarn start`
+### Step-by-step guide to making this project
+You can find the step-by-step for making this project [here]()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Cloning the frontend
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The frontend is a simple create-react-app. After cloning, install the dependencies.
 
-### `yarn test`
+```
+yarn install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then start the dev server
 
-### `yarn build`
+```
+yarn start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Connecting with your backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To connect this application, to your backend server.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. You can find the sample backend project **postgres dashboard** [here](https://app.canonic.dev/projects/61ae4ae2b122dd00278f1759/graph?utm_source=github&utm_medium=organic_samples&utm_campaign=30daysofcanonic_uc_2&utm_term=connect_with_backend_here&utm_content=day_8) and clone it.
+2. Copy the url from the docs
+3. Go to [DashboardGrid.js](./src/components/DashboardGrid/DashboardGrid.js) and [DashboardTable.js](./src/components/DashboardTable/DashboardTable.js) - change the uri to point to your project.
+### Deploying
 
-### `yarn eject`
+Generates production assets in the `public` folder.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+yarn install
+yarn build
+```
