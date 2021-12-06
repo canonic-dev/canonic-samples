@@ -10,7 +10,7 @@ A demo showcasing how dynamic notifications can be built on React and powered by
 
 #### [Demo](https://dynamic-notifications.netlify.app/?utm_source=github&utm_medium=organic_code&utm_campaign=30daysofcanonic_uc_1&utm_content=day_4)
 
-#### [Tutorial]()
+#### [Guide](https://dev.to/canonic/how-to-add-a-notification-banner-or-popup-to-your-website-3kmf)
 
 ## Notification Types
 

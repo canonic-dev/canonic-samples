@@ -9,7 +9,7 @@ A sample app powered by [Canonic](https://canonic.dev/?utm_source=github&utm_med
 <br/>
 
 ### Step-by-step guide to making this project
-You can find the step-by-step for making this project [here]()
+You can find the step-by-step for making this project [here](https://dev.to/canonic/creating-a-dashboard-for-your-postgres-db-with-react-and-recharts-2ecm)
 
 ### Cloning the frontend
 
