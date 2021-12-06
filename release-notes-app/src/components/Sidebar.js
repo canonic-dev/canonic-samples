@@ -1,17 +1,6 @@
-import { useQuery } from "@apollo/client";
-import { useCallback, useEffect, useState } from "react";
-import { GET_VERSIONS } from "../gql/query";
+import { useCallback } from "react";
 
-const Sidebar = () => {
-  const [versions, setVersion] = useState(null);
-  const { data, loading } = useQuery(GET_VERSIONS);
-
-  useEffect(() => {
-    if (data) {
-      setVersion(data.versions);
-    }
-  }, [data]); //Setting the useState hook with all the version once component is rendered.
-
+const Sidebar = ({ versions, loading }) => {
   //This useCallback function taken a string argument of date and converts it into formatted date, e.g Day Month Date Year(Monday 1 Jan 1999)
   const date = useCallback((data) => {
     let dateString;

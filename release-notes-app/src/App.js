@@ -1,5 +1,4 @@
 import { ApolloProvider, InMemoryCache, ApolloClient } from "@apollo/client";
-import { Helmet } from "react-helmet";
 
 import UI from "./components/UI";
 
@@ -12,9 +11,6 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Helmet>
-        <title>The Release Notes App</title>
-      </Helmet>
       <div className="App" style={{ height: "100vh" }}>
         <UI />
       </div>
