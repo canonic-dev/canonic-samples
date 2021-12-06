@@ -140,7 +140,7 @@ function DashboardGrid() {
       </div>
       <div>
         <div className="dashboardGrid-chart">
-          New users/projects trend per week
+          New users/projects trend per day
         </div>
         <AreaChart
           width={700}

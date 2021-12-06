@@ -1,8 +1,10 @@
 import React from "react";
 import { Header } from "semantic-ui-react";
+
 import 'semantic-ui-css/semantic.min.css'
 
-import Dashboard from "./components/Dashboard";
+import DashboardGrid from "./components/DashboardGrid";
+import DashboardTable from "./components/DashboardTable";
 
 import "./App.css";
 
@@ -13,7 +15,8 @@ function App() {
         <Header as="h3">Analytics Dashboard connected with Postgres database</Header>
       </header>
       <div className="App-main">
-        <Dashboard />
+        <DashboardGrid />
+        <DashboardTable />
       </div>
     </div>
   );
