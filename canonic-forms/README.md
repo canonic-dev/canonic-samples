@@ -8,7 +8,10 @@ The web-app looks like this:
 
 [**Live Demo**](https://canonic-forms.netlify.app)
 
+[**Guide**](https://dev.to/canonic/build-request-forms-using-react-ant-design-and-a-lowcode-backend-26oe)
+
 The app follows a tabbed layout, each tab representing a separate form. One you fill out the required details, on submit it'll make a `POST` request to the canonic's sample project and sumit your details.
+
 
 ### `yarn start`
 
