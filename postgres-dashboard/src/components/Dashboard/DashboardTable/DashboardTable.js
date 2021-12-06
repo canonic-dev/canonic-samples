@@ -1,43 +1,60 @@
 import React from "react";
+import axios from "axios";
 import { Table } from "semantic-ui-react";
 
 import "./DashboardTable.css";
 
-const TABLE_DATA = [
-  {
-    name: "Lorem Ipsum",
-    email: "lorem@ipsum.com",
-    projectsCreated: 5,
-    projectsCompleted: 3,
-  },
-];
-
+const GET_PROJECTS_URL =
+  "https://postgres-database.hem.staging.canonic.dev/api/projects";
 function DashboardTable() {
+  const [projects, setProjects] = React.useState([]);
+
+  React.useEffect(() => {
+    axios(GET_PROJECTS_URL).then(({ data }) => setProjects(data.data));
+  }, []);
+
   return (
-    <div className="dashboardTable">
-      <Table celled padded>
+    <div className="dashboardTable-wrapper">
+      <Table className="dashboardTable" textAlign="left" celled padded>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Email</Table.HeaderCell>
-            <Table.HeaderCell>Projects created</Table.HeaderCell>
-            <Table.HeaderCell>Projects completed</Table.HeaderCell>
+            <Table.HeaderCell className="dashboardTable-header">
+              Title
+            </Table.HeaderCell>
+            <Table.HeaderCell className="dashboardTable-header">
+              Description
+            </Table.HeaderCell>
+            <Table.HeaderCell className="dashboardTable-header">
+              Owner
+            </Table.HeaderCell>
+            <Table.HeaderCell className="dashboardTable-header">
+              Status
+            </Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {TABLE_DATA.map((item, i) => (
+          {projects.map((item, i) => (
             <Table.Row>
-              <Table.Cell>
+              <Table.Cell
+                width={2}
+                className="dashboardTable-cell dashboardTable-cell-name"
+              >
                 <div>{item.name}</div>
               </Table.Cell>
-              <Table.Cell>
-                <div>{item.email}</div>
+              <Table.Cell width={5} className="dashboardTable-cell">
+                <div>{item.description}</div>
               </Table.Cell>
-              <Table.Cell>
-                <div>{item.projectsCreated}</div>
+              <Table.Cell width={1} className="dashboardTable-cell">
+                <div>{item.users.name}</div>
               </Table.Cell>
-              <Table.Cell>
-                <div>{item.projectsCompleted}</div>
+              <Table.Cell width={1} className="dashboardTable-cell">
+                <div
+                  className={`dashboardTable-status ${
+                    item.status === "completed" && "green-row"
+                  }`}
+                >
+                  {item.status}
+                </div>
               </Table.Cell>
             </Table.Row>
           ))}
