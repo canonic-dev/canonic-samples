@@ -1,24 +1,32 @@
 import React from "react";
 import axios from "axios";
-import { Table } from "semantic-ui-react";
+import { Table, Loader, Dimmer } from "semantic-ui-react";
 
 import "./DashboardTable.css";
 
 const GET_PROJECTS_URL =
   "https://postgres-dashboard-7fc.can.canonic.dev/api/projects";
 function DashboardTable() {
+  const [loading, setLoading] = React.useState(false);
   const [projects, setProjects] = React.useState([]);
 
   React.useEffect(() => {
-    axios(GET_PROJECTS_URL).then(({ data }) => setProjects(data.data || []));
+    setLoading(true);
+    axios(GET_PROJECTS_URL).then(({ data }) => {
+      setProjects(data.data || []);
+      setLoading(false);
+    });
   }, []);
 
   return (
     <div className="dashboardTable-wrapper">
+      <Dimmer active={loading} inverted>
+        <Loader />
+      </Dimmer>
       <Table textAlign="left" celled padded>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Title</Table.HeaderCell>
+            <Table.HeaderCell>Name</Table.HeaderCell>
             <Table.HeaderCell>Description</Table.HeaderCell>
             <Table.HeaderCell>Owner</Table.HeaderCell>
             <Table.HeaderCell>Status</Table.HeaderCell>
