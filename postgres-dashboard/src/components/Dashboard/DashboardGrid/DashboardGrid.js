@@ -13,7 +13,7 @@ import { Card, Statistic } from "semantic-ui-react";
 import "./DashboardGrid.css";
 
 const DASHBOARD_API_URL =
-  "https://postgres-database.hem.staging.canonic.dev/api/projects/dashboard";
+  "https://postgres-dashboard-7fc.can.canonic.dev/api/projects/dashboard";
 
 function DashboardGrid() {
   const [dashboardCount, setDashboardCount] = React.useState({});
@@ -43,74 +43,83 @@ function DashboardGrid() {
     },
   ];
 
-  const { projects = [], users = [] } = dashboardCount;
+  const { projects = [], users = [] } = dashboardCount || {};
   const PREVIOUS_WEEK_DATA = [
     {
       name: "30th Nov",
       projects: projects.filter(
-        (created_at) => created_at > 1638230400000 && created_at < 1638316799000
+        (created_at) =>
+          created_at >= 1638230400000 && created_at < 1638316799000
       ).length,
       users: users.filter(
-        (created_at) => created_at > 1638230400000 && created_at < 1638316799000
+        (created_at) =>
+          created_at >= 1638230400000 && created_at < 1638316799000
       ).length,
     },
     {
       name: "1st Dec",
       projects: projects.filter(
         (created_at) =>
-          created_at.created_at > 1638316800000 &&
-          created_at.created_at < 1638403199000
+          created_at >= 1638316800000 && created_at < 1638403199000
       ).length,
       users: users.filter(
         (created_at) =>
-          created_at.created_at > 1638316800000 &&
-          created_at.created_at < 1638403199000
+          created_at >= 1638316800000 && created_at < 1638403199000
       ).length,
     },
     {
       name: "2nd Dec",
       projects: projects.filter(
-        (created_at) => created_at > 1638403200000 && created_at < 1638489599000
+        (created_at) =>
+          created_at >= 1638403200000 && created_at < 1638489599000
       ).length,
       users: users.filter(
         (created_at) =>
-          created_at > 1638403200000 && created_at.created_at < 1638489599000
+          created_at >= 1638403200000 && created_at < 1638489599000
       ).length,
     },
     {
       name: "3rd Dec",
       projects: projects.filter(
-        (created_at) => created_at > 1638489600000 && created_at < 1638575999000
+        (created_at) =>
+          created_at >= 1638489600000 && created_at < 1638575999000
       ).length,
       users: users.filter(
-        (created_at) => created_at > 1638489600000 && created_at < 1638575999000
+        (created_at) =>
+          created_at >= 1638489600000 && created_at < 1638575999000
       ).length,
     },
     {
       name: "4th Dec",
       projects: projects.filter(
-        (created_at) => created_at > 1638576000000 && created_at < 1638662399000
+        (created_at) =>
+          created_at >= 1638576000000 && created_at < 1638662399000
       ).length,
       users: users.filter(
-        (created_at) => created_at > 1638576000000 && created_at < 1638662399000
+        (created_at) =>
+          created_at >= 1638576000000 && created_at < 1638662399000
       ).length,
     },
     {
       name: "5th Dec",
       projects: projects.filter(
-        (created_at) => created_at > 1638662400000 && created_at < 1638748799000
+        (created_at) =>
+          created_at >= 1638662400000 && created_at < 1638748799000
       ).length,
       users: users.filter(
-        (created_at) => created_at > 1638662400000 && created_at < 1638748799000
+        (created_at) =>
+          created_at >= 1638662400000 && created_at < 1638748799000
       ).length,
     },
     {
       name: "6th Dec",
       projects: projects.filter(
-        (created_at) => created_at > 1638748800000 && created_at < 1638835199000
+        (created_at) =>
+          created_at >= 1638748800000 && created_at < 1638835199000
       ).length,
       users: users.filter(
-        (created_at) => created_at > 1638748800000 && created_at < 1638835199000
+        (created_at) =>
+          created_at >= 1638748800000 && created_at < 1638835199000
       ).length,
     },
   ];

@@ -2,22 +2,6 @@
   margin-top: 60px;
 }
 
-.dashboardTable {
-  width: 100%;
-  text-align: left;
-}
-
-.dashboardTable-header {
-  color: #919191;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.7px;
-}
-
-.dashboardTable-cell {
-  padding: 8px 0;
-}
-
 .dashboardTable-cell-name {
   font-weight: 700;
 }
