@@ -107,6 +107,17 @@ A dashboard for **Github Pull Requests** build with React and Material UI, power
 
 <br/>
 
+### [Postgres Dashboard](./postgres-dashboard/)
+
+A dashboard built on top of PostgresSQL database, powered by Canonic.
+
+![Screenshot](./postgres-dashboard/screenshot.png)
+
+---
+
+<br/>
+
+
 #### More coming soon 🚀
 
 #### Join the thriving 🌎 [Discord](https://discord.gg/9dyytsM) community to get help and share and brainstorm ideas.
