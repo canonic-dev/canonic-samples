@@ -20,9 +20,11 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
-        <Navbar bg="secondary" variant="dark" className="mb-5">
+        <Navbar className="mb-5 navbar-custom" variant="dark">
           <Container>
-            <Navbar.Brand href="#home">Customer Information</Navbar.Brand>
+            <Navbar.Brand className="navbar-brand" href="#home">
+              Customer Information
+            </Navbar.Brand>
           </Container>
         </Navbar>
         <Container>
