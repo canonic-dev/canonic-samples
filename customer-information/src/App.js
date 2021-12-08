@@ -1,5 +1,7 @@
+// Import React and Bootstrap dependencies
 import React from "react";
 import { Container, Navbar } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { ApolloProvider, InMemoryCache, ApolloClient } from "@apollo/client";
 import InformationTable from "./components/Information Table/InformationTable";
 
@@ -10,7 +12,7 @@ import "./App.css";
  */
 const client = new ApolloClient({
   // make sure you update the URI here to point to your backend
-  uri: "https://stripe-integration.hem.staging.canonic.dev/graphql",
+  uri: "https://customer-information.can.canonic.dev/graphql",
   cache: new InMemoryCache({
     addTypename: false,
   }),
@@ -20,18 +22,19 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
-        <Navbar className="mb-5 navbar-custom" variant="dark">
+        {/* Header */}
+        <Navbar className="mb-5 navbar-custom" variant="dark" sticky="top">
           <Container>
-            <Navbar.Brand className="navbar-brand" href="#home">
-              Customer Information
-            </Navbar.Brand>
+            <Navbar.Brand href="#home">Customer Information</Navbar.Brand>
           </Container>
         </Navbar>
+        {/* Middle Container to hold our Table */}
         <Container>
           <InformationTable></InformationTable>
         </Container>
-        <Container className="mt-5">
-          <div>Canonic ©2021 Created by Canonic Inc</div>
+        {/* Footer */}
+        <Container className="mt-3 pb-3 fw-bolder">
+          Canonic ©2021 Created by Canonic Inc
         </Container>
       </div>
     </ApolloProvider>

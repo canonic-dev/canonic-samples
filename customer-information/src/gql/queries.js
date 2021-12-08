@@ -6,20 +6,16 @@ import { gql } from "@apollo/client";
  */
 export const GET_CUSTOMERS_INFO = gql`
   query {
-    customerInfos {
-      title
-      _id
-      createdAt
-      updatedAt
-      customers {
-        data {
-          email
-          name
-          phone
-          created
-          currency
-          id
-        }
+    customers {
+      stripeCustomer {
+        address
+        balance
+        email
+        name
+        phone
+      }
+      hubspotCustomer {
+        properties
       }
     }
   }

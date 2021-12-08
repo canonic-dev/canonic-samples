@@ -7,37 +7,51 @@ import { dummyData } from "../../DummyData";
 import { getColumns, getRows } from "../../utils/normaliseTableData";
 
 const InformationTable = () => {
-  // const { data = {}, loading } = useQuery(GET_CUSTOMERS_INFO);
-  const data = dummyData;
-  const { customerInfos = [] } = data;
+  const { data = {}, loading } = useQuery(GET_CUSTOMERS_INFO);
+  // const data = dummyData;
+  const { customers = [] } = data;
   const columns = getColumns();
-  const rows = getRows(customerInfos);
+  const rows = getRows(customers);
 
-  if (false)
-    // loading
+  if (loading)
     return (
-      <div class="d-flex justify-content-center">
+      <div className="d-flex justify-content-center">
         <Spinner animation="border" />
       </div>
     );
 
   return (
-    <Table responsive hover>
+    <Table responsive hover bordered>
       <thead>
         <tr>
-          <th>#</th>
-          {Object.keys(columns).map((keyName, index) => {
-            return <th key={index}>{keyName.toUpperCase()}</th>;
+          <th class="align-middle">#</th>
+          {Object.keys(columns).map((keyName) => {
+            return (
+              <th class="text-center align-middle" key={keyName}>
+                <div>{keyName.toUpperCase()}</div>
+                {columns[keyName] === "Stripe" ? (
+                  <span class="badge bg-primary ml-5">{columns[keyName]}</span>
+                ) : (
+                  <span class="badge bg-warning text-dark ml-5">
+                    {columns[keyName]}
+                  </span>
+                )}
+              </th>
+            );
           })}
         </tr>
       </thead>
       <tbody>
         {rows.map((customer, index) => {
           return (
-            <tr>
-              <td>{index}</td>
+            <tr key={index}>
+              <td class="align-middle fw-bolder font-monospace">{index}</td>
               {Object.keys(customer).map((keyName, index) => {
-                return <td key={index}>{customer[keyName] ?? "N/A"}</td>;
+                return (
+                  <td class="col-2 align-middle text-center " key={index}>
+                    {customer[keyName] ?? "N/A"}
+                  </td>
+                );
               })}
             </tr>
           );

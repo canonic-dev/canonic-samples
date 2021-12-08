@@ -11,8 +11,8 @@ export const getColumns = () => {
 
 export const getRows = (customers) => {
   return (customers ?? []).map((customer) => {
-    const hubspotData = customer.hubspot.properties;
-    const stripeData = customer.stripe;
+    const hubspotData = customer.hubspotCustomer.properties;
+    const stripeData = customer.stripeCustomer;
     return {
       name: stripeData.name,
       email: hubspotData.email,
@@ -21,9 +21,7 @@ export const getRows = (customers) => {
       address:
         `${stripeData.address.line1},` +
         ` ${stripeData.address.city},` +
-        ` ${stripeData.address.state},` +
-        ` ${stripeData.address.country}` +
-        ` - ${stripeData.address.postal_code}`,
+        ` ${stripeData.address.country}`,
       balance: stripeData.balance,
     };
   });
