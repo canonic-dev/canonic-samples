@@ -97,6 +97,26 @@ Simple web forms for **Contact us** and **Get a Demo** build with React and Ant 
 
 <br/>
 
+### [Github PR Dashboard](./github-pr-dashboard/)
+
+A dashboard for **Github Pull Requests** build with React and Material UI, powered by by [Canonic](https://canonic.dev/) as the **Backend**..
+
+![Screenshot](./github-pr-dashboard/screenshots/screenshot-1.png)
+
+---
+
+<br/>
+
+### [Postgres Dashboard](./postgres-dashboard/)
+
+A dashboard built on top of PostgresSQL database, powered by Canonic.
+
+![Screenshot](./postgres-dashboard/screenshot.png)
+
+---
+
+<br/>
+
 ### [Customer Dashboard](./customer-information/)
 
 A simple mobile responsive dashboard dislaying data from **Stripe** & **Hubspot**. Frontend is built using `React` and `Bootstrap` Frameworks and powered by [Canonic](https://canonic.dev/) as the Backend.

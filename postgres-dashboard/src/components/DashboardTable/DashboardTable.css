@@ -1,0 +1,21 @@
+.dashboardTable-wrapper {
+  margin-top: 60px;
+}
+
+.dashboardTable-cell-name {
+  font-weight: 700;
+}
+
+.dashboardTable-status {
+  padding: 2px 4px;
+  border: 1px solid transparent;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 50px;
+  background: #e9cbaf;
+  text-transform: capitalize;
+}
+
+.green-row {
+  background: #afe9d1;
+}
