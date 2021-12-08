@@ -10,7 +10,7 @@ import Container from "./components/Container";
 import "./index.css";
 
 const client = new ApolloClient({
-  uri: "https://pr-dashboard.hem.staging.canonic.dev/graphql", //Replace this with your own cloned project's URI.
+  uri: "https://github-pr-dashboard-d3d.can.canonic.dev/graphql", //Replace this with your own cloned project's URI.
   cache: new InMemoryCache(),
 });
 ReactDOM.render(

@@ -27,10 +27,6 @@ const Container = () => {
   const [containers, setContainers] = useState(); //Using this state to populate the containers.
 
   useEffect(() => {
-    document.title = "Github PR Dashboard"; //Changing the HTML's header title text.
-  }, []);
-
-  useEffect(() => {
     if (containerData) {
       setContainers(containerData.containers); //Setting up the container state
     }
