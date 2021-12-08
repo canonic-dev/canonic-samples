@@ -6,7 +6,7 @@ import { Table, Spinner } from "react-bootstrap";
 import { getColumns, getRows } from "../../utils/normaliseTableData";
 
 // Dummy Data Source
-import { dummyData } from "../../dummyData";
+// import { dummyData } from "../../DummyData";
 
 // Import Quering dependencies
 import { useQuery } from "@apollo/client";
