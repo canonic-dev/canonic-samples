@@ -30,7 +30,7 @@ yarn start
 
 ### Backend
 
-You can find the sample backend project **Github PR Dashboard** [here](https://app.canonic.dev/dashboard/marketplace/samples) and clone it.
+You can find the sample backend project **Github PR Dashboard** [here](https://app.canonic.dev/projects/61b0eedde08af1002f135b04/graph) and clone it.
 
 ![Screenshot](./screenshots/screenshot-2.png)
 
