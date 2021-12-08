@@ -6,7 +6,7 @@ The web-app looks like this:
 
 ![Screenshot](./screenshots/customer-info.png)
 
-[**Live Demo**]()
+[**Live Demo**](https://canonic-customer-dashboard.netlify.app/)
 
 [**Guide**]()
 
