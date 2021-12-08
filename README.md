@@ -87,7 +87,6 @@ A React js project using Tailwind CSS and Canonic.
 
 <br/>
 
-
 ### [Forms](./canonic-forms/)
 
 Simple web forms for **Contact us** and **Get a Demo** build with React and Ant Design, powered by by [Canonic](https://canonic.dev/) as the **Backend**..
@@ -98,6 +97,15 @@ Simple web forms for **Contact us** and **Get a Demo** build with React and Ant 
 
 <br/>
 
+### [Customer Dashboard](./customer-information/)
+
+A simple mobile responsive dashboard dislaying data from **Stripe** & **Hubspot**. Frontend is built using `React` and `Bootstrap` Frameworks and powered by [Canonic](https://canonic.dev/) as the Backend.
+
+![Screenshot](./customer-information/screenshots/customer-info.png)
+
+---
+
+<br/>
 
 #### More coming soon 🚀
 
