@@ -1,3 +1,4 @@
+// Gets all the columns that needs to be displayed along with the source from which they are being populated.
 export const getColumns = () => {
   return {
     name: "Stripe",
@@ -9,6 +10,7 @@ export const getColumns = () => {
   };
 };
 
+// Takes in the data coming, normalises it and returns an array of rows.
 export const getRows = (customers) => {
   return (customers ?? []).map((customer) => {
     const hubspotData = customer.hubspotCustomer.properties;

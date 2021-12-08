@@ -2,16 +2,18 @@
 import React from "react";
 import { Container, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ApolloProvider, InMemoryCache, ApolloClient } from "@apollo/client";
-import InformationTable from "./components/Information Table/InformationTable";
 
+// Import Apollo Dependencies
+import { ApolloProvider, InMemoryCache, ApolloClient } from "@apollo/client";
+
+import InformationTable from "./components/InformationTable/InformationTable";
 import "./App.css";
 
 /**
  * Connecting with the backend using apollo client
  */
 const client = new ApolloClient({
-  // make sure you update the URI here to point to your backend
+  // Make sure you update the URI here to point to your backend
   uri: "https://customer-information.can.canonic.dev/graphql",
   cache: new InMemoryCache({
     addTypename: false,
