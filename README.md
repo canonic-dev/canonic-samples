@@ -127,6 +127,16 @@ A simple mobile responsive dashboard dislaying data from **Stripe** & **Hubspot*
 
 <br/>
 
+### [Marketing Dashboard](./marketing-dashboard/)
+
+A simple dashboard dislaying metrics from your **Youtube** & **Twitter**. Frontend is built using `React`, `Blueprint` & `react-chartjs-2` Frameworks and powered by [Canonic](https://canonic.dev/) as a **Backend**.
+
+![Screenshot](./marketing-dashboard/screenshots/marketing-dashboard.png)
+
+---
+
+<br/>
+
 #### More coming soon 🚀
 
 #### Join the thriving 🌎 [Discord](https://discord.gg/9dyytsM) community to get help and share and brainstorm ideas.
