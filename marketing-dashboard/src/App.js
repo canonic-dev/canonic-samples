@@ -1,4 +1,6 @@
-import "./App.css";
+// Import React and Bootstrap dependencies
+import React from "react";
+
 import "@blueprintjs/core/lib/css/blueprint.css";
 
 import { Navbar, Alignment, Divider, Spinner } from "@blueprintjs/core";
@@ -10,6 +12,8 @@ import { useQuery } from "@apollo/client";
 import { GET_MARKETING_METRICS } from "./gql/query";
 
 import { dummyData } from "./dummyData";
+
+import "./App.css";
 
 const App = () => {
   const { data = {}, loading } = useQuery(GET_MARKETING_METRICS);
@@ -24,6 +28,7 @@ const App = () => {
 
   return (
     <div className="App">
+      {/* Header */}
       <Navbar className="bp3-dark" style={{ position: "fixed", top: "0" }}>
         <Navbar.Group align={Alignment.LEFT}>
           <Navbar.Heading style={{ marginLeft: "30px" }}>
@@ -31,6 +36,7 @@ const App = () => {
           </Navbar.Heading>
         </Navbar.Group>
       </Navbar>
+      {/* Middle Container to hold our Metrics */}
       <div
         style={{ marginLeft: "30px", marginTop: "80px", marginRight: "30px" }}
       >
@@ -47,6 +53,7 @@ const App = () => {
         </div>
         <Divider style={{ marginTop: "50px" }}></Divider>
       </div>
+      {/* Footer */}
       <div>
         <h5
           style={{

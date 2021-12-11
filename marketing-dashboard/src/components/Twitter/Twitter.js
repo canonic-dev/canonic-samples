@@ -1,3 +1,4 @@
+// Import React and Bootstrap dependencies
 import React from "react";
 
 import { Card, Elevation } from "@blueprintjs/core";
