@@ -7,7 +7,7 @@ import {
   normaliseYoutubeMetrics,
   normaliseEstimatedMinutesWatched,
   normaliseEstimatedMinutesPerCountry,
-} from "../../normaliseData";
+} from "../../utils/normaliseData";
 
 const Youtube = ({
   youtubeMetrics = {},
@@ -28,7 +28,7 @@ const Youtube = ({
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "space-between",
-          gap: "30px",
+          gap: "10px",
         }}
       >
         {youtubeData?.map((card) => {

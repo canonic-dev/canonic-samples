@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Card, Elevation } from "@blueprintjs/core";
-import { normaliseTwitterData } from "../../normaliseData";
+import { normaliseTwitterData } from "../../utils/normaliseData";
 
 const Twitter = (twitter = {}) => {
   const twitterData = normaliseTwitterData(twitter);
@@ -13,7 +13,7 @@ const Twitter = (twitter = {}) => {
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "space-between",
-          gap: "30px",
+          gap: "10px",
         }}
       >
         <Card
@@ -22,7 +22,7 @@ const Twitter = (twitter = {}) => {
           style={{
             minWidth: "200px",
             minHeight: "200px",
-            maxWidth: "600px",
+            maxWidth: "500px",
           }}
         >
           <h5 style={{ fontSize: "large", color: "#394b59" }}>

@@ -12,15 +12,15 @@ import { GET_MARKETING_METRICS } from "./gql/query";
 import { dummyData } from "./dummyData";
 
 const App = () => {
-  // const { data = {}, loading } = useQuery(GET_MARKETING_METRICS);
-  const { metric = {} } = dummyData;
+  const { data = {}, loading } = useQuery(GET_MARKETING_METRICS);
+  const { metric = {} } = data;
 
-  // if (loading)
-  //   return (
-  //     <div style={{ margin: "200px" }}>
-  //       <Spinner></Spinner>
-  //     </div>
-  //   );
+  if (loading)
+    return (
+      <div style={{ margin: "200px" }}>
+        <Spinner></Spinner>
+      </div>
+    );
 
   return (
     <div className="App">
