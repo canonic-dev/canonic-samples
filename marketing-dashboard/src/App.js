@@ -13,7 +13,7 @@ import { dummyData } from "./dummyData";
 
 const App = () => {
   const { data = {}, loading } = useQuery(GET_MARKETING_METRICS);
-  const { metric = {} } = data;
+  const { metric = {} } = data.metric ? data : dummyData;
 
   if (loading)
     return (

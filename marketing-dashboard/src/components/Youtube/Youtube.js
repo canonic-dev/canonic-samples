@@ -40,6 +40,7 @@ const Youtube = ({
                 minWidth: "200px",
                 minHeight: "200px",
               }}
+              key={card.title}
             >
               <h5 style={{ fontSize: "large", color: "#394b59" }}>
                 {card.title}

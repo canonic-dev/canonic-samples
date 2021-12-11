@@ -3,8 +3,6 @@ export const normaliseTwitterData = (twitter) => {
     return { accountInformation: {}, metrics: [] };
   }
 
-  console.log("TWITTER: ", twitter);
-
   const twitterData = twitter.twitter;
   return {
     accountInformation: {
@@ -35,7 +33,6 @@ export const normaliseTwitterData = (twitter) => {
 };
 
 export const normaliseYoutubeMetrics = (youtubeData) => {
-  console.log("DATA : ", youtubeData);
   return (
     youtubeData.columnHeaders.map((column, index) => {
       return {
