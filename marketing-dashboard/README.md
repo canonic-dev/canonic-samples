@@ -6,9 +6,9 @@ The web-app looks like this:
 
 ![Screenshot](./screenshots/marketing-dashboard.png)
 
-[**Live Demo**]()
+[**Live Demo**](https://canonic-marketing-dashboard.netlify.app/)
 
-[**Guide**]()
+[**Guide**](https://dev.to/canonic/how-to-build-a-twitter-youtube-analytics-dashboard-with-react-2p2d)
 
 The app follows a layout with a sticky `Header` at the top, `Metrics` in the middle, and a `Footer` at the bottom. It shows a `loading indicator` when the API call is in progress.
 
