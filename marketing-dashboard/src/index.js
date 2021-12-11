@@ -10,7 +10,7 @@ import { ApolloProvider, InMemoryCache, ApolloClient } from "@apollo/client";
  */
 const client = new ApolloClient({
   // Make sure you update the URI here to point to your backend
-  uri: "https://marketing-ii.hem.staging.canonic.dev/graphql",
+  uri: "https://marketing-dashboard.can.canonic.dev/graphql",
   cache: new InMemoryCache({
     addTypename: false,
   }),
