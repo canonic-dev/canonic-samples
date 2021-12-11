@@ -8,7 +8,7 @@ The web-app looks like this:
 
 [**Live Demo**](https://canonic-customer-dashboard.netlify.app/)
 
-[**Guide**]()
+[**Guide**](https://dev.to/canonic/how-to-hydrate-data-from-stripe-and-hubspot-1gf2)
 
 The app follows a layout with a sticky `Header` at the top, `Table` in the middle, and a `Footer` at the bottom.
 
