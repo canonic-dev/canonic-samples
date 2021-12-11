@@ -117,11 +117,21 @@ A dashboard built on top of PostgresSQL database, powered by Canonic.
 
 <br/>
 
-### [Customer Dashboard](./customer-information/)
+### [Customer Dashboard](./marketing-information/)
 
 A simple mobile responsive dashboard dislaying data from **Stripe** & **Hubspot**. Frontend is built using `React` and `Bootstrap` Frameworks and powered by [Canonic](https://canonic.dev/) as the Backend.
 
 ![Screenshot](./customer-information/screenshots/customer-info.png)
+
+---
+
+<br/>
+
+### [Marketing Dashboard](./customer-information/)
+
+A simple dashboard dislaying metrics from your **Youtube** & **Twitter**. Frontend is built using `React`, `Blueprint` & `react-chartjs-2` Frameworks and powered by [Canonic](https://canonic.dev/) as a **Backend**.
+
+![Screenshot](./marketing-dashboard/screenshots/marketing-dashboard.png)
 
 ---
 
