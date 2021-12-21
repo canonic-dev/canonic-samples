@@ -137,6 +137,18 @@ A simple dashboard dislaying metrics from your **Youtube** & **Twitter**. Fronte
 
 <br/>
 
+---
+
+<br/>
+
+### [Marketplace App](./marketing-dashboard/)
+
+A **Marketplace App** build with React and Material UI, powered by by [Canonic](https://canonic.dev/) as the **Backend**.
+
+![Screenshot](./Marketplace-App/screenshots/screenshot-1.png)
+
+---
+
 #### More coming soon 🚀
 
 #### Join the thriving 🌎 [Discord](https://discord.gg/9dyytsM) community to get help and share and brainstorm ideas.
