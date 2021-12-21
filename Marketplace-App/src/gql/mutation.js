@@ -17,3 +17,11 @@ export const LOGIN_WITH_GOOGLE_MUTATION = gql`
     }
   }
 `;
+
+export const NOTIFY = gql`
+  mutation Notify($title: String!) {
+    createNotify(input: { title: $title }) {
+      title
+    }
+  }
+`;
