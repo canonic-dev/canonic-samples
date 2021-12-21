@@ -129,7 +129,7 @@ A simple mobile responsive dashboard dislaying data from **Stripe** & **Hubspot*
 
 ### [Marketing Dashboard](./marketing-dashboard/)
 
-A **Marketplace App** build with React and Material UI, powered by by [Canonic](https://canonic.dev/) as the **Backend**.
+A simple dashboard dislaying metrics from your **Youtube** & **Twitter**. Frontend is built using `React`, `Blueprint` & `react-chartjs-2` Frameworks and powered by [Canonic](https://canonic.dev/) as a **Backend**.
 
 ![Screenshot](./marketing-dashboard/screenshots/marketing-dashboard.png)
 
