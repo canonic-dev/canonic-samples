@@ -9,7 +9,7 @@ A sample app powered by [Canonic](https://canonic.dev/)
 <br/>
 
 ### Step-by-step guide to making this project
-You can find the step-by-step for making this project [here]()
+You can find the step-by-step for making this project [here](https://dev.to/canonic/how-to-build-a-customer-facing-roadmap-with-react-1gal)
 
 ### Cloning the frontend
 

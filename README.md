@@ -87,7 +87,6 @@ A React js project using Tailwind CSS and Canonic.
 
 <br/>
 
-
 ### [Forms](./canonic-forms/)
 
 Simple web forms for **Contact us** and **Get a Demo** build with React and Ant Design, powered by by [Canonic](https://canonic.dev/) as the **Backend**..
@@ -98,6 +97,57 @@ Simple web forms for **Contact us** and **Get a Demo** build with React and Ant 
 
 <br/>
 
+### [Github PR Dashboard](./github-pr-dashboard/)
+
+A dashboard for **Github Pull Requests** build with React and Material UI, powered by by [Canonic](https://canonic.dev/) as the **Backend**..
+
+![Screenshot](./github-pr-dashboard/screenshots/screenshot-1.png)
+
+---
+
+<br/>
+
+### [Postgres Dashboard](./postgres-dashboard/)
+
+A dashboard built on top of PostgresSQL database, powered by Canonic.
+
+![Screenshot](./postgres-dashboard/screenshot.png)
+
+---
+
+<br/>
+
+### [Customer Dashboard](./customer-information/)
+
+A simple mobile responsive dashboard dislaying data from **Stripe** & **Hubspot**. Frontend is built using `React` and `Bootstrap` Frameworks and powered by [Canonic](https://canonic.dev/) as the Backend.
+
+![Screenshot](./customer-information/screenshots/customer-info.png)
+
+---
+
+<br/>
+
+### [Marketing Dashboard](./marketing-dashboard/)
+
+A simple dashboard dislaying metrics from your **Youtube** & **Twitter**. Frontend is built using `React`, `Blueprint` & `react-chartjs-2` Frameworks and powered by [Canonic](https://canonic.dev/) as a **Backend**.
+
+![Screenshot](./marketing-dashboard/screenshots/marketing-dashboard.png)
+
+---
+
+<br/>
+
+---
+
+<br/>
+
+### [Marketplace App](./marketing-dashboard/)
+
+A **Marketplace App** build with React and Material UI, powered by by [Canonic](https://canonic.dev/) as the **Backend**.
+
+![Screenshot](./Marketplace-App/screenshots/screenshot-1.png)
+
+---
 
 #### More coming soon 🚀
 
