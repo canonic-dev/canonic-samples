@@ -2,7 +2,7 @@
 
 A basic clone application of Product Hunt built using React, MaterialUI and Canonic as the backend.
 
-![Screenshot](./product-hunt.png)
+![Screenshot](./screenshots/product-hunt.png)
 
 A sample app powered by [Canonic](https://canonic.dev/)
 

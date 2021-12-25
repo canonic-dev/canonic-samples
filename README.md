@@ -149,6 +149,16 @@ A **Marketplace App** build with React and Material UI, powered by by [Canonic](
 
 ---
 
+<br/>
+
+### [ProductHunt](./product-hunt/)
+
+A basic **Product Hunt** clone with React and Material UI, powered by by [Canonic](https://canonic.dev/) as the **Backend**.
+
+![Screenshot](./product-hunt/screenshots/product-hunt.png)
+
+---
+
 #### More coming soon 🚀
 
 #### Join the thriving 🌎 [Discord](https://discord.gg/9dyytsM) community to get help and share and brainstorm ideas.
