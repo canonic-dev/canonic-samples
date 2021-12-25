@@ -6,7 +6,8 @@ A basic clone application of Product Hunt built using React, MaterialUI and Cano
 
 A sample app powered by [Canonic](https://canonic.dev/)
 
-[Link]()
+[Guide](https://dev.to/canonic/producthunt-clone-react-lowcode-backend-135)
+[Demo](https://canonic-product-hunt.netlify.app)
 <br/>
 
 ### Step-by-step guide to making this project
