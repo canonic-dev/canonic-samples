@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Button, Box, Divider } from "@mui/material";
+import { Avatar, Box, Divider } from "@mui/material";
 
 const Header = () => {
   return (
@@ -28,24 +28,6 @@ const Header = () => {
         >
           P
         </Avatar>
-        <Button
-          variant="outlined"
-          size="small"
-          disableRipple="true"
-          sx={{
-            color: "#da552f",
-            borderColor: "#da552f",
-            fontWeight: 500,
-            "&:hover": {
-              backgroundColor: "#da552f",
-              borderColor: "#fff",
-              color: "#fff",
-              boxShadow: "none",
-            },
-          }}
-        >
-          Submit
-        </Button>
       </Box>
       <Divider variant="fullWidth" />
     </Box>

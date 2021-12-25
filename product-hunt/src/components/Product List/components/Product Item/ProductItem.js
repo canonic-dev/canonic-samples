@@ -9,13 +9,28 @@ const ProductItem = ({
   description,
   tags,
   brandImage,
-  upvotes = "999",
+  upvotes = "0",
   isUpvoted = false,
+  _id,
 }) => {
   const [upvoted, setUpvoted] = React.useState(isUpvoted);
 
   const handleUpvote = () => {
     setUpvoted(!upvoted);
+    fetch(`https://product-hunt-18dcc2.can.canonic.dev/api/upvotes`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        input: {
+          product: _id,
+        },
+      }),
+    })
+      .then((res) => res.json())
+      .then((json) => json?.data);
   };
 
   const tagNames = tags.map((tag) => {
@@ -53,15 +68,14 @@ const ProductItem = ({
         ></ListItemText>
       </Box>
       <ListItemSecondaryAction>
-        {" "}
         <UpvoteButton
           upvoted={upvoted}
           variant="outlined"
-          disableRipple="true"
+          disableRipple={true}
           onClick={handleUpvote}
           startIcon={<ArrowDropUpIcon />}
         >
-          {upvotes}
+          {upvotes ?? 50}
         </UpvoteButton>
       </ListItemSecondaryAction>
     </ListItem>

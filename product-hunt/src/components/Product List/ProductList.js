@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import ProductItem from "./components/Product Item";
 import { Typography, Box, List, Divider } from "@mui/material";
 
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = React.useState([]);
 
   React.useEffect(() => {
-    fetch(`https://ph-clone.hem.staging.canonic.dev/api/products`)
+    fetch(`https://product-hunt-18dcc2.can.canonic.dev/api/products`)
       .then((res) => res.json())
       .then((json) => json?.data)
       .then((products) =>
@@ -33,7 +33,7 @@ const ProductList = () => {
       <List>
         {products.map((product) => {
           return (
-            <Box>
+            <Box key={product._id}>
               <ProductItem {...product}></ProductItem>
               <Divider />
             </Box>
