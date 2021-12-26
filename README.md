@@ -152,12 +152,6 @@ A **Marketplace App** build with React and Material UI, powered by by [Canonic](
 
 ---
 
-<br/>
-
-### [CRM App](./crm-app/)
-
-A **CRM App** build with React and Material UI, powered by by [Canonic](https://canonic.dev/) as the **Backend**.
-
 
 <br/>
 
@@ -175,6 +169,7 @@ A basic **Product Hunt** clone with React and Material UI, powered by by [Canoni
 
 A **CRM App** build with React and Material UI, powered by by [Canonic](https://canonic.dev/) as the **Backend**.
 
+![Screenshot](./crm-app/screenshots/screenshot-1.png)
 
 <br/>
 ---
