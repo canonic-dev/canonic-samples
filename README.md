@@ -141,11 +141,23 @@ A simple dashboard dislaying metrics from your **Youtube** & **Twitter**. Fronte
 
 <br/>
 
-### [Marketplace App](./marketing-dashboard/)
+### [Marketplace App](./Marketplace-App/)
 
 A **Marketplace App** build with React and Material UI, powered by by [Canonic](https://canonic.dev/) as the **Backend**.
 
 ![Screenshot](./Marketplace-App/screenshots/screenshot-1.png)
+
+---
+
+---
+
+<br/>
+
+### [CRM App](./crm-app/)
+
+A **CRM App** build with React and Material UI, powered by by [Canonic](https://canonic.dev/) as the **Backend**.
+
+![Screenshot](./crm-app/screenshots/screenshot-1.png)
 
 ---
 
