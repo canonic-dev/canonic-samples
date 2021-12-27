@@ -10,7 +10,7 @@ The app is a demo of how you can build a CRM using React, graphql and [Canonic](
 
 ### [Demo](https://canonic-crm.netlify.app/)
 
-### [Tutorial]()
+### [Tutorial](https://dev.to/canonic/crm-app-with-react-19o3)
 
 ## Running the example
 
