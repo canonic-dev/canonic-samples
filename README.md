@@ -149,9 +149,7 @@ A **Marketplace App** build with React and Material UI, powered by by [Canonic](
 
 ---
 
-
 ---
-
 
 <br/>
 
@@ -171,7 +169,16 @@ A **CRM App** build with React and Material UI, powered by by [Canonic](https://
 
 ![Screenshot](./crm-app/screenshots/screenshot-1.png)
 
+## <br/>
+
 <br/>
+
+### 🍻 [Restaurant App](./RestaurantApp-iOS/)
+
+A basic Food Ordering iOS Application built with Swift 5 and Canonic as the backend.
+
+![Screenshot](./RestaurantApp-iOS/screenshots/one.PNG)
+
 ---
 
 #### More coming soon 🚀

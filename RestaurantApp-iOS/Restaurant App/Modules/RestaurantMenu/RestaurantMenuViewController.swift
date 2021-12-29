@@ -95,7 +95,6 @@ extension RestaurantMenuViewController {
         let jsonData = try! JSONEncoder().encode(orderSummary)
         let json = try? JSONSerialization.jsonObject(with: jsonData, options: [.topLevelDictionaryAssumed]) as? [String: Any]
         let parameters = ["input": json]
-        debugPrint(parameters)
         placeOrder(parameters: parameters as [String : Any])
     }
     
@@ -196,8 +195,7 @@ extension RestaurantMenuViewController {
         updateViewState()
         AF.request("https://restaurant-app.can.canonic.dev/api/orders", method: .post, parameters: parameters as Parameters, encoding: JSONEncoding.default)
             .responseData { [weak self] response in
-                if ((response.value) != nil) {
-                    debugPrint(response)
+                if ((response.value) != nil) {                    
                     DispatchQueue.main.async {
                         self?.presentAlert(withTitle: "Order Placed 🥳", message: "Sit Tight, your order has been received!")
                         self?.orderSummary = Order()
