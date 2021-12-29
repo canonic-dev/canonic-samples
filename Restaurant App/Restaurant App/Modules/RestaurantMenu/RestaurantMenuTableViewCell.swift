@@ -22,7 +22,8 @@ class RestaurantMenuTableViewCell: UITableViewCell {
     var delegate: OrderUpdates?
     
     override func awakeFromNib() {
-        super.awakeFromNib()        
+        super.awakeFromNib()
+        itemImageView.contentMode = .scaleToFill
     }
     
     @IBAction func stepperClicked(_ sender: UIStepper) {
@@ -40,11 +41,18 @@ class RestaurantMenuTableViewCell: UITableViewCell {
         
         guard let image = menu.itemImage else { return }
         guard let urlString = image.url else { return }
-        let request = URLRequest(url: URL(string: urlString)!)
+
+        let request = URLRequest(url: URL(string: urlString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!)
         AF.request(request).responseImage { response in
             if case .success(let image) = response.result {
                 self.itemImageView.image = image
             }
         }
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        itemImageView.image = nil
+    }
 }
+

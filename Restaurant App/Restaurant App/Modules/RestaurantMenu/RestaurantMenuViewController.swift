@@ -68,15 +68,17 @@ extension RestaurantMenuViewController {
             retryStackView.isHidden = true
             loadingStackView.isHidden = false
             menuTableView.isHidden = true
+            break;
             
         case .failure:
             retryStackView.isHidden = false
             menuTableView.isHidden = true
             loadingStackView.isHidden = true
-            break
+            break;
             
         }
     }
+    
 }
 
 
@@ -89,10 +91,11 @@ extension RestaurantMenuViewController {
         updateViewState()
     }
     
-    @IBAction func placeOrderClicked(_ sender: Any) {        
+    @IBAction func placeOrderClicked(_ sender: Any) {
         let jsonData = try! JSONEncoder().encode(orderSummary)
         let json = try? JSONSerialization.jsonObject(with: jsonData, options: [.topLevelDictionaryAssumed]) as? [String: Any]
         let parameters = ["input": json]
+        debugPrint(parameters)
         placeOrder(parameters: parameters as [String : Any])
     }
     
@@ -189,19 +192,26 @@ extension RestaurantMenuViewController {
     }
     
     fileprivate func placeOrder(parameters: [String: Any]) {
-        
-        AF.request("https://restaurant-app.hem.staging.canonic.dev/api/orders", method: .post, parameters: parameters as Parameters, encoding: JSONEncoding.default)
+        fetchState = .loading
+        updateViewState()
+        AF.request("https://restaurant-app.can.canonic.dev/api/orders", method: .post, parameters: parameters as Parameters, encoding: JSONEncoding.default)
             .responseData { [weak self] response in
                 if ((response.value) != nil) {
+                    debugPrint(response)
                     DispatchQueue.main.async {
-                        self?.orderSummary = Order()
-                        self?.updatePlaceOrderButton()
-                        self?.menuTableView.reloadData()
                         self?.presentAlert(withTitle: "Order Placed 🥳", message: "Sit Tight, your order has been received!")
+                        self?.orderSummary = Order()
+                        self?.orderSummary.restaurant = (self?.restaurant.id)!
+                        self?.updatePlaceOrderButton()
+                        self?.fetchState = .success
+                        self?.updateViewState()
+                        self?.menuTableView.reloadSections(IndexSet(integer: 0), with: .bottom)
                     }
                 } else {
                     DispatchQueue.main.async {
                         self?.presentAlert(withTitle: "Oops!", message: "Something went wrong, try again later!")
+                        self?.updateViewState()
+                        self?.fetchState = .failure
                     }
                 }
             }
