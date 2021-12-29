@@ -20,7 +20,7 @@ A sample app powered by [Canonic](https://canonic.dev/)
 
 ### Step-by-step guide to making this project
 
-You can find the step-by-step for making this project [here]()
+You can find the step-by-step for making this project [here](https://dev.to/canonic/building-a-restaurant-ios-app-4bpm)
 
 ### Connecting with your backend
 
