@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 
 struct StoryBoardID {
     static let RestaurantListingsViewController = "RestaurantListingsViewController"
